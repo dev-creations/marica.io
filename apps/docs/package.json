@@ -1,5 +1,5 @@
 {
-  "name": "@repo/docs",
+  "name": "@marica.io/docs",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
+    "@marica.io/eslint-config": "*",
     "@storybook/addon-actions": "^7.6.7",
     "@storybook/addon-docs": "^7.6.7",
     "@storybook/addon-essentials": "^7.6.7",
@@ -27,7 +27,7 @@
     "eslint": "^8.56.0",
     "serve": "^14.2.1",
     "storybook": "^7.6.7",
-    "@repo/typescript-config": "*",
+    "@marica.io/typescript-config": "*",
     "typescript": "^5.3.3",
     "vite": "^5.0.10"
   }

@@ -1,4 +1,4 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["@repo/eslint-config/react.js"],
+  extends: ["@marica.io/eslint-config/react.js"],
 };

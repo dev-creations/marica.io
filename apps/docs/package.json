@@ -11,24 +11,24 @@
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
   },
   "dependencies": {
-    "@acme/ui": "*",
+    "@marica.io/button": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@marica.io/eslint-config": "*",
-    "@storybook/addon-actions": "^7.6.7",
-    "@storybook/addon-docs": "^7.6.7",
-    "@storybook/addon-essentials": "^7.6.7",
-    "@storybook/addon-links": "^7.6.7",
-    "@storybook/react": "^7.6.7",
-    "@storybook/react-vite": "^7.6.7",
+    "@marica.io/config": "*",
+    "@marica.io/typescript-config": "*",
+    "@storybook/addon-actions": "^7.6.10",
+    "@storybook/addon-docs": "^7.6.10",
+    "@storybook/addon-essentials": "^7.6.10",
+    "@storybook/addon-links": "^7.6.10",
+    "@storybook/react": "^7.6.10",
+    "@storybook/react-vite": "^7.6.10",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.56.0",
     "serve": "^14.2.1",
-    "storybook": "^7.6.7",
-    "@marica.io/typescript-config": "*",
+    "storybook": "^7.6.10",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10"
+    "vite": "^5.0.12"
   }
 }

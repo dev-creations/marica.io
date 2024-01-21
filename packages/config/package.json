@@ -1,11 +1,9 @@
 {
-  "name": "@marica.io/eslint-config",
+  "name": "@marica.io/config",
   "version": "0.0.0",
   "private": true,
   "files": [
-    "library.js",
-    "react.js",
-    "storybook.js"
+    "eslint/**"
   ],
   "devDependencies": {
     "@vercel/style-guide": "^5.1.0",

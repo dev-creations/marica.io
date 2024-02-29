@@ -3,9 +3,7 @@ import { dirname, join, resolve } from "path";
 import type { StorybookConfig } from "@storybook/react-vite";
 
 function getAbsolutePath(value: string) {
-  return dirname(
-    resolve(join("..", "..", "node_modules", value, "package.json"))
-  );
+  return dirname(require.resolve(join(value, "package.json")));
 }
 
 const config = {

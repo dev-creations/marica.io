@@ -1,0 +1,25 @@
+{
+  "name": "@marica.io/style",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist",
+    "tailwind.config.js"
+  ],
+  "scripts": {
+    "build": "tailwindcss -i index.css -o ./dist/index.css",
+    "dev": "tailwindcss -i index.css -o ./dist/index.css --watch"
+  },
+  "exports": {
+    ".": "./dist/index.css",
+    "./config": "./tailwind.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  }
+}

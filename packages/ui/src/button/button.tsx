@@ -1,8 +1,8 @@
 import { PropsWithChildren } from "react";
 import { cn } from "../lib/utils";
-import { BareButton, type BareButtonProps } from "./bare-button";
+import { Interactive, type InteractiveProps } from "../interactive";
 
-export interface ButtonProps extends BareButtonProps {}
+export interface ButtonProps extends InteractiveProps {}
 
 export function Button({
   children,
@@ -10,11 +10,11 @@ export function Button({
   ...props
 }: PropsWithChildren<ButtonProps>) {
   return (
-    <BareButton
-      className={cn("bg-blue-900 px-4 py-1 text-white", className)}
+    <Interactive
+      className={cn("bg-gray-800 px-4 py-1 text-white", className)}
       {...props}
     >
       {children}
-    </BareButton>
+    </Interactive>
   );
 }

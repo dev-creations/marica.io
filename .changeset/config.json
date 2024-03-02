@@ -6,5 +6,6 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": ["@marica.io/docs"]
+  "baseBranch": "main",
+  "ignore": []
 }

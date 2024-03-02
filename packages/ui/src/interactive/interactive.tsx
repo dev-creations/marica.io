@@ -1,14 +1,14 @@
 import { PropsWithChildren } from "react";
 import { cn } from "../lib/utils";
 
-export interface BareButtonProps
+export interface InteractiveProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export function BareButton({
+export function Interactive({
   children,
   className,
   ...props
-}: PropsWithChildren<BareButtonProps>) {
+}: PropsWithChildren<InteractiveProps>) {
   return (
     <button
       type="button"

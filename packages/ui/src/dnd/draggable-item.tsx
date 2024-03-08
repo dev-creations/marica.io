@@ -1,29 +1,64 @@
 import { Slot } from "@radix-ui/react-slot";
-import type { HTMLAttributes, PropsWithChildren } from "react";
+import {
+  useRef,
+  type HTMLAttributes,
+  type PropsWithChildren,
+  useEffect,
+  useState,
+} from "react";
 import { useDnD } from "./dnd-provider";
 
-export interface DraggableItemProps extends HTMLAttributes<HTMLElement> {}
+export interface DraggableItemProps<T> extends HTMLAttributes<HTMLElement> {
+  data?: T;
+}
 
-export const DraggableItem = (props: PropsWithChildren<DraggableItemProps>) => {
-  const { setDragging } = useDnD();
+export function DraggableItem<T>(
+  props: PropsWithChildren<DraggableItemProps<T>>
+) {
+  const { setDragging, dragging, dropIndicator, setDropIndicator, setData } =
+    useDnD();
+  const draggableItemRef = useRef<HTMLElement>(null);
+  const [index, setIndex] = useState(-1);
+
+  useEffect(() => {
+    if (draggableItemRef.current) {
+      const index = Array.from(
+        draggableItemRef.current.parentElement?.children || []
+      ).findIndex((e) => e === draggableItemRef.current);
+      setIndex(index);
+    }
+  }, [draggableItemRef]);
 
   const handleDragStart = (e: React.DragEvent<HTMLElement>) => {
     e.stopPropagation();
-    setDragging(true);
+    setData(props.data || null);
+    setDragging(index);
   };
 
   const handleDragEnd = (e: React.DragEvent<HTMLElement>) => {
     e.stopPropagation();
-    setDragging(false);
-    console.log((e.target as HTMLElement).getBoundingClientRect());
+    setDropIndicator(undefined);
+    setData(null);
+    setDragging(-1);
   };
 
+  const displayIndicator = dragging !== index && dropIndicator?.index === index;
+
   return (
-    <Slot
-      {...props}
-      draggable="true"
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-    />
+    <>
+      {displayIndicator && dropIndicator.position === "before" && (
+        <div>here</div>
+      )}
+      <Slot
+        {...props}
+        ref={draggableItemRef}
+        draggable="true"
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+      />
+      {displayIndicator && dropIndicator.position === "after" && (
+        <div>here</div>
+      )}
+    </>
   );
-};
+}

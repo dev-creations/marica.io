@@ -24,7 +24,28 @@ export const Primary: Story = {
   name: "Simple DnD",
   args: {
     children: (
-      <DropZone>
+      <DropZone onItemDropped={console.log}>
+        <ul>
+          <DraggableItem>
+            <li>1</li>
+          </DraggableItem>
+          <DraggableItem data={{ foo: "bar" }}>
+            <li>2</li>
+          </DraggableItem>
+          <DraggableItem>
+            <li>3</li>
+          </DraggableItem>
+        </ul>
+      </DropZone>
+    ),
+  },
+};
+
+export const DifferentDropzone: Story = {
+  name: "With different Dropzone",
+  args: {
+    children: (
+      <>
         <ul>
           <DraggableItem>
             <li>1</li>
@@ -36,7 +57,19 @@ export const Primary: Story = {
             <li>3</li>
           </DraggableItem>
         </ul>
-      </DropZone>
+
+        <DropZone>
+          <ul
+            style={{
+              width: 96,
+              height: 96,
+              background: "red",
+            }}
+          >
+            <li>Drop here</li>
+          </ul>
+        </DropZone>
+      </>
     ),
   },
 };

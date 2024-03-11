@@ -15,6 +15,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("@marica.io/tailwind-ram")],
+  plugins: [require("@marica.io/tailwind-ram"), require("tailwindcss-animate")],
 };
 export default config;

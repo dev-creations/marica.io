@@ -1,17 +1,27 @@
-"use client";
-
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@marica.io/ui";
+} from "../src/select";
 
-export default function Home() {
-  return (
-    <main className="min-h-screen">
-      <Select>
+type Story = StoryObj<typeof Select>;
+
+const meta: Meta<typeof Select> = {
+  title: "Atoms/Select",
+  component: Select,
+  argTypes: {},
+};
+
+export default meta;
+
+export const Primary: Story = {
+  name: "Select",
+  args: {
+    children: (
+      <>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Theme" />
         </SelectTrigger>
@@ -20,7 +30,7 @@ export default function Home() {
           <SelectItem value="dark">Dark</SelectItem>
           <SelectItem value="system">System</SelectItem>
         </SelectContent>
-      </Select>
-    </main>
-  );
-}
+      </>
+    ),
+  },
+};

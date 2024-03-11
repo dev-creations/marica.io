@@ -5,6 +5,9 @@
   "files": [
     "eslint/**"
   ],
+  "dependencies": {
+    "@marica.io/style": "*"
+  },
   "devDependencies": {
     "@vercel/style-guide": "^5.1.0",
     "eslint-config-turbo": "^1.11.3",

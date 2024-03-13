@@ -17,7 +17,7 @@ export function EvenFlow({
     <Comp
       {...props}
       className={cn(
-        "flex justify-between items-center [&>*]:basis-0 [&>*]:w-0",
+        "flex justify-between items-center [&>*]:flex-1",
         className
       )}
     />

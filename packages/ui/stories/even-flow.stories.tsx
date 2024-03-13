@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import EvenFlow from "../src/layouts/even-flow";
+import { EvenFlow } from "../src/layouts";
 
 type Story = StoryObj<typeof EvenFlow>;
 

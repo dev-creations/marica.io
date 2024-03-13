@@ -1,5 +1,11 @@
 # @marica.io/style
 
+## 0.0.3
+
+### Patch Changes
+
+- fix - layout styling
+
 ## 0.0.2
 
 ### Patch Changes

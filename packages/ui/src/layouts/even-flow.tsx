@@ -6,7 +6,7 @@ interface EvenFlowProps extends HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
 }
 
-export default function EvenFlow({
+export function EvenFlow({
   className,
   asChild,
   ...props

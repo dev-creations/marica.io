@@ -1,5 +1,11 @@
 # @marica.io/tailwind-ram
 
+## 0.1.1
+
+### Patch Changes
+
+- update imports, minor bugfixes
+
 ## 0.1.0
 
 ### Minor Changes

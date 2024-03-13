@@ -14,5 +14,5 @@ export default defineConfig({
   minify: true,
   splitting: true,
   skipNodeModulesBundle: true,
-  watch: true,
+  watch: false,
 });

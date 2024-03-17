@@ -11,15 +11,16 @@
     "strings": "on"
   },
   "eslint.workingDirectories": [
-    "./apps/docs",
-    { "pattern": "./packages/ui/*" }
+    { "pattern": "./apps/*" },
+    { "pattern": "./packages/*" }
   ],
   "files.associations": {
     "*.css": "tailwindcss"
   },
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }

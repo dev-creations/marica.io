@@ -1,5 +1,11 @@
 # @marica.io/style
 
+## 0.1.0
+
+### Minor Changes
+
+- add form elements
+
 ## 0.0.3
 
 ### Patch Changes

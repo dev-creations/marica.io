@@ -1,5 +1,16 @@
 # @marica.io/ui
 
+## 0.1.0
+
+### Minor Changes
+
+- add form elements
+
+### Patch Changes
+
+- Updated dependencies
+  - @marica.io/style@0.1.0
+
 ## 0.0.4
 
 ### Patch Changes

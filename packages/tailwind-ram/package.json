@@ -6,7 +6,10 @@
   "keywords": [
     "tailwind",
     "css-grid",
-    "ram-pattern"
+    "ram-pattern",
+    "tailwind-layout",
+    "css-layout",
+    "layout"
   ],
   "repository": {
     "type": "git",

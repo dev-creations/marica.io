@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@marica.io/config": "*",
+    "@marica.io/eslint-config-marica": "*",
     "@marica.io/typescript-config": "*",
     "@storybook/addon-actions": "^7.6.10",
     "@storybook/addon-docs": "^7.6.10",

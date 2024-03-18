@@ -1,10 +1,7 @@
 {
-  "name": "@marica.io/config",
+  "name": "@marica.io/eslint-config-marica",
   "version": "0.0.2",
   "private": true,
-  "files": [
-    "eslint/**"
-  ],
   "dependencies": {
     "@marica.io/style": "*"
   },

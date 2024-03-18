@@ -1,4 +1,4 @@
-# @marica.io/config
+# @marica.io/eslint-config-marica
 
 ## 0.0.2
 

@@ -1,12 +1,12 @@
-import { z } from "zod";
+import type { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   type SubmitHandler,
   type UseFormReturn,
   useForm,
 } from "react-hook-form";
-import { FormInternal } from "./internal-form";
 import { type FormEventHandler } from "react";
+import { FormInternal } from "./internal-form";
 
 interface FormProps<T extends z.ZodRawShape, K extends z.ZodObject<T>> {
   schema: K;
@@ -27,7 +27,7 @@ export function Form<T extends z.ZodRawShape, K extends z.ZodObject<T>>({
 
   return (
     <FormInternal {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} onChange={onChange}>
+      <form onChange={onChange} onSubmit={form.handleSubmit(onSubmit)}>
         {children(form)}
       </form>
     </FormInternal>

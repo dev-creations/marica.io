@@ -12,7 +12,7 @@ import {
 type Story = StoryObj<typeof Select>;
 
 const meta: Meta<typeof Select> = {
-  title: "Atoms/Select",
+  title: "Form/Select",
   component: Select,
   argTypes: {},
 };

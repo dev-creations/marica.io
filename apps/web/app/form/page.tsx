@@ -19,10 +19,12 @@ import {
   SelectValue,
   toast,
   InputText,
+  DatePicker,
 } from "@marica.io/ui";
 
 const FormSchema = z.object({
   name: z.string().min(3),
+  birthday: z.date().optional(),
   email: z
     .string({
       required_error: "Please select an email to display.",
@@ -32,6 +34,7 @@ const FormSchema = z.object({
 
 export default function FormPage() {
   function onSubmit(data: z.infer<typeof FormSchema>) {
+    console.log(data);
     toast({
       title: "You submitted the following values:",
       description: (
@@ -52,17 +55,33 @@ export default function FormPage() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Name</FormLabel>
-                <InputText defaultValue={field.value}>name</InputText>
+                <InputText defaultValue={field.value} onInput={field.onChange}>
+                  name
+                </InputText>
               </FormItem>
             )}
-          ></FormField>
+          />
+          <FormField
+            control={form.control}
+            name="birthday"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Birthda y</FormLabel>
+                <DatePicker value={field.value} onSelect={field.onChange} />
+              </FormItem>
+            )}
+          />
+
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>
-                <Select defaultValue={field.value}>
+                <Select
+                  defaultValue={field.value}
+                  onValueChange={field.onChange}
+                >
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Select a verified email to display" />
@@ -82,9 +101,7 @@ export default function FormPage() {
               </FormItem>
             )}
           />
-          <Button type="submit" disabled={!form.formState.isValid}>
-            Submit
-          </Button>
+          <Button type="submit">Submit</Button>
         </>
       )}
     </Form>

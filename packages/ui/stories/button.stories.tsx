@@ -17,8 +17,42 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 export const Primary: Story = {
-  name: "Button",
   args: {
     children: "Hello",
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    children: "Hello",
+    variant: "destructive",
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    children: "Hello",
+    variant: "ghost",
+  },
+};
+
+export const Link: Story = {
+  args: {
+    children: "Hello",
+    variant: "link",
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    children: "Hello",
+    variant: "outline",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    children: "Hello",
+    variant: "secondary",
   },
 };

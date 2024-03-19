@@ -8,7 +8,16 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./layouts": "./dist/layouts/index.js"
+    "./layouts": "./dist/layouts/index.js",
+    "./button": "./dist/button/index.js",
+    "./checkbox": "./dist/checkbox/index.js",
+    "./chip": "./dist/chip/index.js",
+    "./date-picker": "./dist/date-picker/index.js",
+    "./date-range-picker": "./dist/date-range-picker/index.js",
+    "./form": "./dist/form/index.js",
+    "./input-text": "./dist/input-text/index.js",
+    "./select": "./dist/select/index.js",
+    "./toast": "./dist/toast/index.js"
   },
   "scripts": {
     "build": "tsup",

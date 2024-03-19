@@ -1,5 +1,13 @@
 # @marica.io/docs
 
+## 0.0.3
+
+### Patch Changes
+
+- fix deployment
+- Updated dependencies
+  - @marica.io/ui@0.1.2
+
 ## 0.0.2
 
 ### Patch Changes

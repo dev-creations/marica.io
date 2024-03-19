@@ -1,5 +1,11 @@
 # @marica.io/style
 
+## 0.1.1
+
+### Patch Changes
+
+- add chip, datepicker, improve styles
+
 ## 0.1.0
 
 ### Minor Changes

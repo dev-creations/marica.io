@@ -1,6 +1,4 @@
-import { withThemeByClassName } from "@storybook/addon-themes";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import type { Preview, ReactRenderer } from "@storybook/react";
+import type { Preview } from "@storybook/react";
 
 import "@marica.io/style";
 

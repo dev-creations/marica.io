@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { InputText } from "../src/input-text";
 import { SearchIcon } from "lucide-react";
+import { InputText } from "../src/input-text";
 
 type Story = StoryObj<typeof InputText>;
 
 const meta: Meta<typeof InputText> = {
-  title: "Atoms/InputText",
+  title: "Form/InputText",
   component: InputText,
   argTypes: {},
 };

@@ -8,3 +8,4 @@ export * from "./toast";
 export * from "./input-text";
 export * from "./date-picker";
 export * from "./date-range-picker";
+export * from "./checkbox";

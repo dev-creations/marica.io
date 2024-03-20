@@ -20,18 +20,18 @@ export function DateRangePicker({
   onSelect,
 }: DateRangePickerProps & HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("grid gap-2", className)}>
+    <div className={cn("mio-grid mio-gap-2", className)}>
       <Popover>
         <PopoverTrigger asChild>
           <Button
             className={cn(
-              "w-[300px] justify-start text-left font-normal",
-              !range && "text-muted-foreground"
+              "mio-w-[300px] mio-justify-start mio-text-left mio-font-normal",
+              !range && "mio-text-muted-foreground"
             )}
             id="date"
             variant="outline"
           >
-            <CalendarIcon className="mr-2 h-4 w-4" />
+            <CalendarIcon className="mio-mr-2 mio-h-4 mio-w-4" />
             {range?.from ? (
               range.to ? (
                 <>
@@ -48,10 +48,10 @@ export function DateRangePicker({
         </PopoverTrigger>
         <PopoverContent
           align="start"
-          className="w-auto bg-white p-0 dark:border-slate-950 dark:bg-slate-950"
+          className="mio-w-auto mio-bg-white mio-p-0 dark:mio-border-slate-950 dark:mio-bg-slate-950"
         >
           <Calendar
-            defaultMonth={range?.from || new Date()}
+            defaultMonth={range?.from ?? new Date()}
             initialFocus
             mode="range"
             numberOfMonths={2}

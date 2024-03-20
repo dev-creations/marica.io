@@ -8,7 +8,7 @@
     "css": "../style/index.css",
     "baseColor": "slate",
     "cssVariables": false,
-    "prefix": ""
+    "prefix": "mio-"
   },
   "aliases": {
     "components": "@/components",

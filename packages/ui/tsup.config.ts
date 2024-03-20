@@ -10,9 +10,10 @@ export default defineConfig({
   sourcemap: true,
   treeshake: true,
   shims: true,
-  bundle: false,
+  bundle: true,
   minify: true,
   splitting: true,
   skipNodeModulesBundle: true,
   watch: false,
+  noExternal: ["date-fns"],
 });

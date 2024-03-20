@@ -1,8 +1,7 @@
-import { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 import { cn } from "../lib/utils";
 
-export interface InteractiveProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export type InteractiveProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Interactive({
   children,
@@ -12,7 +11,7 @@ export function Interactive({
   return (
     <button
       type="button"
-      className={cn("cursor-pointer bg-white text-base", className)}
+      className={cn("mio-cursor-pointer mio-bg-white mio-text-base", className)}
       {...props}
     >
       {children}

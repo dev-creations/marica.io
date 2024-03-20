@@ -8,5 +8,6 @@ export * from "./date-range-picker";
 export * from "./form";
 export * from "./input-text";
 export * from "./select";
+export * from "./switch";
 export * from "./dnd";
 export * from "./toast";

@@ -1,5 +1,11 @@
 # @marica.io/style
 
+## 0.1.3
+
+### Patch Changes
+
+- add tailwind prefix, add rich-text and switch
+
 ## 0.1.2
 
 ### Patch Changes

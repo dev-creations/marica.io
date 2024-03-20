@@ -20,16 +20,17 @@ export function DatePicker({
       <PopoverTrigger asChild>
         <Button
           className={cn(
-            "w-[280px] justify-start text-left font-normal",
-            !value && "text-slate-700 dark:bg-slate-950 dark:text-slate-100"
+            "mio-w-[280px] mio-justify-start mio-text-left mio-font-normal",
+            !value &&
+              "mio-text-slate-700 dark:mio-bg-slate-950 dark:mio-text-slate-100"
           )}
           variant="outline"
         >
-          <CalendarIcon className="mr-2 h-4 w-4" />
+          <CalendarIcon className="mio-mr-2 mio-h-4 mio-w-4" />
           {value ? format(value, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto bg-white p-0 dark:border-slate-950 dark:bg-slate-950">
+      <PopoverContent className="mio-w-auto mio-bg-white mio-p-0 dark:mio-border-slate-950 dark:mio-bg-slate-950">
         <Calendar
           initialFocus
           mode="single"

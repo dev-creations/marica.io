@@ -11,16 +11,18 @@ const Checkbox = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CheckboxPrimitive.Root
     className={cn(
-      "peer h-4 w-4 shrink-0 rounded-sm border border-slate-900 ring-offset-white hover:border-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-slate-900 data-[state=checked]:text-slate-50 dark:border-slate-50 dark:ring-offset-slate-950 dark:hover:border-slate-800 dark:focus-visible:ring-slate-300 dark:data-[state=checked]:bg-slate-50 dark:data-[state=checked]:text-slate-900",
+      "mio-peer mio-h-4 mio-w-4 mio-shrink-0 mio-rounded-sm mio-border mio-border-slate-900 mio-ring-offset-white hover:mio-border-slate-200 focus-visible:mio-outline-none focus-visible:mio-ring-2 focus-visible:mio-ring-slate-950 focus-visible:mio-ring-offset-2 disabled:mio-cursor-not-allowed disabled:mio-opacity-50 data-[state=checked]:mio-bg-slate-900 data-[state=checked]:mio-text-slate-50 dark:mio-border-slate-50 dark:mio-ring-offset-slate-950 dark:hover:mio-border-slate-800 dark:focus-visible:mio-ring-slate-300 dark:data-[state=checked]:mio-bg-slate-50 dark:data-[state=checked]:mio-text-slate-900",
       className
     )}
     ref={ref}
     {...props}
   >
     <CheckboxPrimitive.Indicator
-      className={cn("flex items-center justify-center text-current")}
+      className={cn(
+        "mio-flex mio-items-center mio-justify-center mio-text-current"
+      )}
     >
-      <Check className="h-4 w-4" />
+      <Check className="mio-size-4" />
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
 ));

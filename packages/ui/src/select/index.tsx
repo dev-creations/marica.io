@@ -18,7 +18,7 @@ const SelectTrigger = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Trigger
     className={cn(
-      "flex h-10 w-full items-center justify-between rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-950 dark:bg-slate-950 dark:text-slate-100 [&>span]:line-clamp-1",
+      "mio-flex mio-h-10 mio-w-full mio-items-center mio-justify-between mio-rounded-md mio-border mio-border-gray-300 mio-bg-white mio-px-3 mio-py-2 mio-text-sm mio-shadow-sm focus:mio-outline-none focus:mio-ring-2 focus:mio-ring-offset-2 disabled:mio-cursor-not-allowed disabled:mio-opacity-50 dark:mio-border-slate-950 dark:mio-bg-slate-950 dark:mio-text-slate-100 [&>span]:mio-line-clamp-1",
       className
     )}
     ref={ref}
@@ -26,7 +26,7 @@ const SelectTrigger = forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      <ChevronDown className="mio-h-4 mio-w-4 mio-opacity-50" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
@@ -38,13 +38,13 @@ const SelectScrollUpButton = forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollUpButton
     className={cn(
-      "flex cursor-default items-center justify-center py-1",
+      "mio-flex mio-cursor-default mio-items-center mio-justify-center mio-py-1",
       className
     )}
     ref={ref}
     {...props}
   >
-    <ChevronUp className="h-4 w-4" />
+    <ChevronUp className="mio-h-4 mio-w-4" />
   </SelectPrimitive.ScrollUpButton>
 ));
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
@@ -55,13 +55,13 @@ const SelectScrollDownButton = forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollDownButton
     className={cn(
-      "flex cursor-default items-center justify-center py-1",
+      "mio-flex mio-cursor-default mio-items-center mio-justify-center mio-py-1",
       className
     )}
     ref={ref}
     {...props}
   >
-    <ChevronDown className="h-4 w-4" />
+    <ChevronDown className="mio-h-4 mio-w-4" />
   </SelectPrimitive.ScrollDownButton>
 ));
 SelectScrollDownButton.displayName =
@@ -74,9 +74,9 @@ const SelectContent = forwardRef<
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border border-gray-300 bg-white text-black shadow-md dark:border-slate-950 dark:bg-slate-950 dark:text-slate-100",
+        "data-[state=open]:mio-animate-in data-[state=closed]:mio-animate-out data-[state=closed]:mio-fade-out-0 data-[state=open]:mio-fade-in-0 data-[state=closed]:mio-zoom-out-95 data-[state=open]:mio-zoom-in-95 data-[side=bottom]:mio-slide-in-from-top-2 data-[side=left]:mio-slide-in-from-right-2 data-[side=right]:mio-slide-in-from-left-2 data-[side=top]:mio-slide-in-from-bottom-2 mio-relative mio-z-50 mio-max-h-96 mio-min-w-[8rem] mio-overflow-hidden mio-rounded-md mio-border mio-border-gray-300 mio-bg-white mio-text-black mio-shadow-md dark:mio-border-slate-950 dark:mio-bg-slate-950 dark:mio-text-slate-100",
         position === "popper" &&
-          "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+          "data-[side=bottom]:mio-translate-y-1 data-[side=left]:mio--translate-x-1 data-[side=right]:mio-translate-x-1 data-[side=top]:mio--translate-y-1",
         className
       )}
       position={position}
@@ -87,7 +87,7 @@ const SelectContent = forwardRef<
       <SelectPrimitive.Viewport
         className={cn(
           position === "popper" &&
-            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
+            "mio-h-[var(--radix-select-trigger-height)] mio-w-full mio-min-w-[var(--radix-select-trigger-width)]"
         )}
       >
         {children}
@@ -103,7 +103,10 @@ const SelectLabel = forwardRef<
   ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
-    className={cn("p-1.5 pl-3 text-sm font-semibold", className)}
+    className={cn(
+      "mio-p-1.5 mio-pl-3 mio-text-sm mio-font-semibold",
+      className
+    )}
     ref={ref}
     {...props}
   />
@@ -116,15 +119,15 @@ const SelectItem = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Item
     className={cn(
-      "focus:bg-accent focus:text-accent-foreground relative flex w-full cursor-pointer select-none items-center gap-2 rounded-sm p-1.5 pl-3 text-sm outline-none hover:bg-blue-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:hover:bg-blue-950 dark:hover:text-slate-200",
+      "focus:mio-bg-accent focus:mio-text-accent-foreground mio-relative mio-flex mio-w-full mio-cursor-pointer mio-select-none mio-items-center mio-gap-2 mio-rounded-sm mio-p-1.5 mio-pl-3 mio-text-sm mio-outline-none hover:mio-bg-blue-100 data-[disabled]:mio-pointer-events-none data-[disabled]:mio-opacity-50 dark:hover:mio-bg-blue-950 dark:hover:mio-text-slate-200",
       className
     )}
     ref={ref}
     {...props}
   >
-    <span className="flex h-3.5 w-3.5 items-center justify-center">
+    <span className="mio-flex mio-h-3.5 mio-w-3.5 mio-items-center mio-justify-center">
       <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check className="mio-h-4 mio-w-4" />
       </SelectPrimitive.ItemIndicator>
     </span>
 
@@ -138,7 +141,7 @@ const SelectSeparator = forwardRef<
   ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Separator
-    className={cn("-mx-1 my-1 h-px bg-gray-300", className)}
+    className={cn("mio--mx-1 mio-my-1 mio-h-px mio-bg-gray-300", className)}
     ref={ref}
     {...props}
   />

@@ -1,10 +1,9 @@
 import { Slot } from "@radix-ui/react-slot";
 import {
-  HTMLAttributes,
-  PropsWithChildren,
+  type HTMLAttributes,
+  type PropsWithChildren,
   useCallback,
   useRef,
-  useState,
 } from "react";
 import { useDnD } from "./dnd-provider";
 
@@ -20,7 +19,7 @@ export interface DropZoneProps extends HTMLAttributes<HTMLElement> {
   }) => void;
 }
 
-export const DropZone = (props: PropsWithChildren<DropZoneProps>) => {
+export function DropZone(props: PropsWithChildren<DropZoneProps>) {
   const dropZoneRef = useRef<HTMLElement>(null);
   const { setDropIndicator, dropIndicator, dragging, data } = useDnD();
 
@@ -98,4 +97,4 @@ export const DropZone = (props: PropsWithChildren<DropZoneProps>) => {
       }}
     />
   );
-};
+}

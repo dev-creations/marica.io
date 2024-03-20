@@ -22,10 +22,10 @@ export function DraggableItem<T>(
 
   useEffect(() => {
     if (draggableItemRef.current) {
-      const index = Array.from(
+      const i = Array.from(
         draggableItemRef.current.parentElement?.children || []
       ).findIndex((e) => e === draggableItemRef.current);
-      setIndex(index);
+      setIndex(i);
     }
   }, [draggableItemRef]);
 
@@ -46,9 +46,9 @@ export function DraggableItem<T>(
 
   return (
     <>
-      {displayIndicator && dropIndicator.position === "before" && (
+      {displayIndicator && dropIndicator.position === "before" ? (
         <div>here</div>
-      )}
+      ) : null}
       <Slot
         {...props}
         ref={draggableItemRef}
@@ -56,9 +56,9 @@ export function DraggableItem<T>(
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
       />
-      {displayIndicator && dropIndicator.position === "after" && (
+      {displayIndicator && dropIndicator.position === "after" ? (
         <div>here</div>
-      )}
+      ) : null}
     </>
   );
 }

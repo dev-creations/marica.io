@@ -2,13 +2,12 @@
 
 import {
   forwardRef,
-  ElementRef,
-  ComponentPropsWithoutRef,
-  HTMLAttributes,
+  type ElementRef,
+  type ComponentPropsWithoutRef,
+  type HTMLAttributes,
 } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-
 import { cn } from "../lib/utils";
 
 const Dialog = DialogPrimitive.Root;
@@ -26,7 +25,7 @@ const DialogOverlay = forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0  fixed inset-0 z-50 bg-black/80",
+      "data-[state=open]:mio-animate-in data-[state=closed]:mio-animate-out data-[state=closed]:mio-fade-out-0 data-[state=open]:mio-fade-in-0  mio-fixed mio-inset-0 mio-z-50 mio-bg-black/80",
       className
     )}
     {...props}
@@ -43,14 +42,14 @@ const DialogContent = forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white p-6 shadow-lg duration-200 sm:rounded-lg",
+        "data-[state=open]:mio-animate-in data-[state=closed]:mio-animate-out data-[state=closed]:mio-fade-out-0 data-[state=open]:mio-fade-in-0 data-[state=closed]:mio-zoom-out-95 data-[state=open]:mio-zoom-in-95 data-[state=closed]:mio-slide-out-to-left-1/2 data-[state=closed]:mio-slide-out-to-top-[48%] data-[state=open]:mio-slide-in-from-left-1/2 data-[state=open]:mio-slide-in-from-top-[48%] mio-fixed mio-left-[50%] mio-top-[50%] mio-z-50 mio-grid mio-w-full mio-max-w-lg mio-translate-x-[-50%] mio-translate-y-[-50%] mio-gap-4 mio-border mio-bg-white mio-p-6 mio-shadow-lg mio-duration-200 sm:mio-rounded-lg",
         className
       )}
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
-        <X className="h-4 w-4" />
+      <DialogPrimitive.Close className="mio-ring-offset-background focus:mio-ring-ring data-[state=open]:mio-bg-accent data-[state=open]:mio-text-muted-foreground mio-absolute mio-right-4 mio-top-4 mio-rounded-sm mio-opacity-70 mio-transition-opacity hover:mio-opacity-100 focus:mio-outline-none focus:mio-ring-2 focus:mio-ring-offset-2 disabled:mio-pointer-events-none">
+        <X className="mio-h-4 mio-w-4" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
@@ -58,32 +57,30 @@ const DialogContent = forwardRef<
 ));
 DialogContent.displayName = DialogPrimitive.Content.displayName;
 
-const DialogHeader = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col space-y-1.5 text-center sm:text-left",
-      className
-    )}
-    {...props}
-  />
-);
+function DialogHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cn(
+        "mio-flex mio-flex-col mio-space-y-1.5 mio-text-center sm:mio-text-left",
+        className
+      )}
+      {...props}
+    />
+  );
+}
 DialogHeader.displayName = "DialogHeader";
 
-const DialogFooter = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
-      className
-    )}
-    {...props}
-  />
-);
+function DialogFooter({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cn(
+        "mio-flex mio-flex-col-reverse sm:mio-flex-row sm:mio-justify-end sm:mio-space-x-2",
+        className
+      )}
+      {...props}
+    />
+  );
+}
 DialogFooter.displayName = "DialogFooter";
 
 const DialogTitle = forwardRef<
@@ -93,7 +90,7 @@ const DialogTitle = forwardRef<
   <DialogPrimitive.Title
     ref={ref}
     className={cn(
-      "text-lg font-semibold leading-none tracking-tight",
+      "mio-text-lg mio-font-semibold mio-leading-none mio-tracking-tight",
       className
     )}
     {...props}
@@ -107,7 +104,7 @@ const DialogDescription = forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn("text-muted-foreground text-sm", className)}
+    className={cn("mio-text-muted-foreground mio-text-sm", className)}
     {...props}
   />
 ));

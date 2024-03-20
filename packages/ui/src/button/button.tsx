@@ -4,27 +4,27 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300",
+  "mio-inline-flex mio-items-center mio-justify-center mio-whitespace-nowrap mio-rounded-md mio-text-sm mio-font-medium mio-ring-offset-white mio-transition-colors mio-focus-visible:outline-none focus-visible:mio-ring-2 focus-visible:mio-ring-slate-950 focus-visible:mio-ring-offset-2 disabled:mio-pointer-events-none disabled:mio-opacity-50 dark:mio-ring-offset-slate-950 dark:focus-visible:mio-ring-slate-300",
   {
     variants: {
       variant: {
         default:
-          "bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+          "mio-bg-slate-900 mio-text-slate-50 hover:mio-bg-slate-900/90 dark:mio-bg-slate-50 dark:mio-text-slate-900 dark:hover:mio-bg-slate-50/90",
         destructive:
-          "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90",
+          "mio-bg-red-500 mio-text-slate-50 hover:mio-bg-red-500/90 dark:mio-bg-red-900 dark:mio-text-slate-50 dark:hover:mio-bg-red-900/90",
         outline:
-          "border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:text-slate-100 dark:hover:text-slate-50",
+          "mio-border mio-border-slate-200 mio-bg-white hover:mio-bg-slate-100 hover:mio-text-slate-900 dark:mio-border-slate-800 dark:mio-bg-slate-950 dark:hover:mio-bg-slate-800 dark:mio-text-slate-100 dark:hover:mio-text-slate-50",
         secondary:
-          "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
+          "mio-bg-slate-100 mio-text-slate-900 hover:mio-bg-slate-100/80 dark:mio-bg-slate-800 dark:mio-text-slate-50 dark:hover:mio-bg-slate-800/80",
         ghost:
-          "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:text-slate-100",
-        link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
+          "hover:mio-bg-slate-100 hover:mio-text-slate-900 dark:hover:mio-bg-slate-800 dark:hover:mio-text-slate-50 dark:mio-text-slate-100",
+        link: "mio-text-slate-900 mio-underline-offset-4 hover:mio-underline dark:mio-text-slate-50",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        default: "mio-h-10 mio-px-4 mio-py-2",
+        sm: "mio-h-9 mio-rounded-md mio-px-3",
+        lg: "mio-h-11 mio-rounded-md mio-px-8",
+        icon: "mio-h-10 mio-w-10",
       },
     },
     defaultVariants: {

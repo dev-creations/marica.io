@@ -9,11 +9,11 @@ export function InputText({
   ...props
 }: PropsWithChildren<InputTextProps>) {
   return (
-    <label className="flex cursor-text items-center gap-2 rounded-lg border border-gray-300 bg-white p-2 text-black shadow-sm ring-offset-2 focus-within:ring-2 dark:border-slate-950 dark:bg-slate-950 dark:text-slate-100 [&>*]:leading-6">
+    <label className="mio-flex mio-cursor-text mio-items-center mio-gap-2 mio-rounded-lg mio-border mio-border-gray-300 mio-bg-white mio-p-2 mio-text-black mio-shadow-sm mio-ring-offset-2 focus-within:mio-ring-2 dark:mio-border-slate-950 dark:mio-bg-slate-950 dark:mio-text-slate-100 [&>*]:mio-leading-6">
       <input
         {...props}
         className={cn(
-          "flex-1 border-0 bg-transparent focus:outline-0",
+          "mio-flex-1 mio-border-0 mio-bg-transparent focus:mio-outline-0",
           className
         )}
       />

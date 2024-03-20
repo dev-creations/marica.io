@@ -11,3 +11,4 @@ export * from "./select";
 export * from "./switch";
 export * from "./dnd";
 export * from "./toast";
+export * from "./rich-text";

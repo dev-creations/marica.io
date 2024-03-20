@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: build
-        run: npm run build
+        run: NODE_OPTIONS="--max_old_space_size=4096" npm run build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

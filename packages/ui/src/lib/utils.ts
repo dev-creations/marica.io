@@ -8,5 +8,5 @@ export function cn(...inputs: ClassValue[]) {
 let debounceTimer: NodeJS.Timeout;
 export function debounce(fn: () => void, delay = 600) {
   clearTimeout(debounceTimer);
-  debounceTimer = setTimeout(() => fn(), delay);
+  debounceTimer = setTimeout(fn, delay);
 }

@@ -34,6 +34,7 @@ module.exports = {
   ignorePatterns: ["node_modules/", "dist/", ".eslintrc.json", "**/*.css"],
   // add rules configurations here
   rules: {
+    "import/no-named-as-default": "off",
     "import/no-default-export": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-misused-promises": "off",

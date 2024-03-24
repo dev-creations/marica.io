@@ -14,7 +14,7 @@ export function InputText({
 }: PropsWithChildren<InputTextProps>) {
   const childArray = Children.toArray(children);
   return (
-    <label className="mio-flex mio-cursor-text mio-items-center mio-gap-2 mio-rounded-lg mio-border mio-border-gray-300 mio-bg-white mio-p-2 mio-text-black mio-shadow-sm mio-ring-offset-2 focus-within:mio-ring-2 dark:mio-border-slate-950 dark:mio-bg-slate-950 dark:mio-text-slate-100 [&>*]:mio-leading-6">
+    <label className="mio-flex mio-cursor-text mio-items-center mio-gap-2 mio-rounded-lg mio-border mio-border-gray-300 mio-bg-white mio-p-2 mio-text-black mio-shadow-sm mio-ring-offset-2 focus-within:mio-ring-2 [&>*]:mio-leading-6">
       {childArray.length > 1 && childArray[0]}
       <input
         {...props}

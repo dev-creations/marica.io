@@ -44,12 +44,12 @@ const SheetContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "mio-fixed mio-inset-x-0 mio-bottom-0 mio-z-50 mio-mt-24 mio-flex mio-h-auto mio-flex-col mio-rounded-t-[10px] mio-border mio-border-slate-200 mio-bg-white dark:mio-border-slate-800 dark:mio-bg-slate-950",
+        "mio-fixed mio-inset-x-0 mio-bottom-0 mio-z-50 mio-mt-24 mio-flex mio-h-auto mio-flex-col mio-rounded-t-[10px] mio-border mio-border-slate-200 mio-bg-white",
         className
       )}
       {...props}
     >
-      <div className="mio-mx-auto mio-mt-4 mio-h-2 mio-w-[100px] mio-rounded-full mio-bg-slate-100 dark:mio-bg-slate-800" />
+      <div className="mio-mx-auto mio-mt-4 mio-h-2 mio-w-[100px] mio-rounded-full mio-bg-slate-100" />
       {children}
     </DrawerPrimitive.Content>
   </SheetPortal>
@@ -95,7 +95,7 @@ const SheetTitle = React.forwardRef<
   <DrawerPrimitive.Title
     ref={ref}
     className={cn(
-      "mio-text-lg mio-font-semibold mio-leading-none mio-tracking-tight dark:mio-text-white",
+      "mio-text-lg mio-font-semibold mio-leading-none mio-tracking-tight",
       className
     )}
     {...props}
@@ -109,10 +109,7 @@ const SheetDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Description
     ref={ref}
-    className={cn(
-      "mio-text-sm mio-text-slate-500 dark:mio-text-slate-400",
-      className
-    )}
+    className={cn("mio-text-sm mio-text-slate-500", className)}
     {...props}
   />
 ));

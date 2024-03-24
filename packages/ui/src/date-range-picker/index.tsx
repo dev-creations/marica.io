@@ -48,7 +48,7 @@ export function DateRangePicker({
         </PopoverTrigger>
         <PopoverContent
           align="start"
-          className="mio-w-auto mio-bg-white mio-p-0 dark:mio-border-slate-950 dark:mio-bg-slate-950"
+          className="mio-w-auto mio-bg-white mio-p-0"
         >
           <Calendar
             defaultMonth={range?.from ?? new Date()}

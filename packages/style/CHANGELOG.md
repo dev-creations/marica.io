@@ -1,5 +1,14 @@
 # @marica.io/style
 
+## 0.1.4
+
+### Patch Changes
+
+- - Remove dark mode
+  - Add child slot to input text
+  - Add Rich Text Editor
+  - Init Sheet
+
 ## 0.1.3
 
 ### Patch Changes

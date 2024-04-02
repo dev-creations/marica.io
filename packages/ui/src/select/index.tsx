@@ -18,7 +18,7 @@ const SelectTrigger = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Trigger
     className={cn(
-      "mio-flex mio-h-10 mio-w-full mio-items-center mio-justify-between mio-rounded-md mio-border mio-border-gray-300 mio-bg-white mio-px-3 mio-py-2 mio-text-sm mio-shadow-sm focus:mio-outline-none focus:mio-ring-2 focus:mio-ring-offset-2 disabled:mio-cursor-not-allowed disabled:mio-opacity-50 dark:mio-border-slate-950 dark:mio-bg-slate-950 dark:mio-text-slate-100 [&>span]:mio-line-clamp-1",
+      "mio-flex mio-h-10 mio-w-full mio-items-center mio-justify-between mio-rounded-md mio-border mio-border-gray-300 mio-bg-white mio-px-3 mio-py-2 mio-text-sm mio-shadow-sm focus:mio-outline-none focus:mio-ring-2 focus:mio-ring-offset-2 disabled:mio-cursor-not-allowed disabled:mio-opacity-50 [&>span]:mio-line-clamp-1",
       className
     )}
     ref={ref}
@@ -74,7 +74,7 @@ const SelectContent = forwardRef<
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       className={cn(
-        "data-[state=open]:mio-animate-in data-[state=closed]:mio-animate-out data-[state=closed]:mio-fade-out-0 data-[state=open]:mio-fade-in-0 data-[state=closed]:mio-zoom-out-95 data-[state=open]:mio-zoom-in-95 data-[side=bottom]:mio-slide-in-from-top-2 data-[side=left]:mio-slide-in-from-right-2 data-[side=right]:mio-slide-in-from-left-2 data-[side=top]:mio-slide-in-from-bottom-2 mio-relative mio-z-50 mio-max-h-96 mio-min-w-[8rem] mio-overflow-hidden mio-rounded-md mio-border mio-border-gray-300 mio-bg-white mio-text-black mio-shadow-md dark:mio-border-slate-950 dark:mio-bg-slate-950 dark:mio-text-slate-100",
+        "data-[state=open]:mio-animate-in data-[state=closed]:mio-animate-out data-[state=closed]:mio-fade-out-0 data-[state=open]:mio-fade-in-0 data-[state=closed]:mio-zoom-out-95 data-[state=open]:mio-zoom-in-95 data-[side=bottom]:mio-slide-in-from-top-2 data-[side=left]:mio-slide-in-from-right-2 data-[side=right]:mio-slide-in-from-left-2 data-[side=top]:mio-slide-in-from-bottom-2 mio-relative mio-z-50 mio-max-h-96 mio-min-w-[8rem] mio-overflow-hidden mio-rounded-md mio-border mio-border-gray-300 mio-bg-white mio-text-black mio-shadow-md",
         position === "popper" &&
           "data-[side=bottom]:mio-translate-y-1 data-[side=left]:mio--translate-x-1 data-[side=right]:mio-translate-x-1 data-[side=top]:mio--translate-y-1",
         className
@@ -119,7 +119,7 @@ const SelectItem = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Item
     className={cn(
-      "focus:mio-bg-accent focus:mio-text-accent-foreground mio-relative mio-flex mio-w-full mio-cursor-pointer mio-select-none mio-items-center mio-gap-2 mio-rounded-sm mio-p-1.5 mio-pl-3 mio-text-sm mio-outline-none hover:mio-bg-blue-100 data-[disabled]:mio-pointer-events-none data-[disabled]:mio-opacity-50 dark:hover:mio-bg-blue-950 dark:hover:mio-text-slate-200",
+      "focus:mio-bg-accent focus:mio-text-accent-foreground mio-relative mio-flex mio-w-full mio-cursor-pointer mio-select-none mio-items-center mio-gap-2 mio-rounded-sm mio-p-1.5 mio-pl-3 mio-text-sm mio-outline-none hover:mio-bg-blue-100 data-[disabled]:mio-pointer-events-none data-[disabled]:mio-opacity-50",
       className
     )}
     ref={ref}

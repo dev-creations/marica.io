@@ -21,8 +21,7 @@ export function DatePicker({
         <Button
           className={cn(
             "mio-w-[280px] mio-justify-start mio-text-left mio-font-normal",
-            !value &&
-              "mio-text-slate-700 dark:mio-bg-slate-950 dark:mio-text-slate-100"
+            !value && "mio-text-slate-700"
           )}
           variant="outline"
         >
@@ -30,7 +29,7 @@ export function DatePicker({
           {value ? format(value, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="mio-w-auto mio-bg-white mio-p-0 dark:mio-border-slate-950 dark:mio-bg-slate-950">
+      <PopoverContent className="mio-w-auto mio-bg-white mio-p-0">
         <Calendar
           initialFocus
           mode="single"

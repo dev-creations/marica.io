@@ -1,5 +1,11 @@
 # @marica.io/style
 
+## 0.1.5
+
+### Patch Changes
+
+- feature - add utils to export
+
 ## 0.1.4
 
 ### Patch Changes

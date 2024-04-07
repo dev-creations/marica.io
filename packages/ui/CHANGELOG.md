@@ -1,5 +1,13 @@
 # @marica.io/ui
 
+## 0.1.5
+
+### Patch Changes
+
+- feature - add utils to export
+- Updated dependencies
+  - @marica.io/style@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes

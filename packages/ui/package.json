@@ -1,6 +1,6 @@
 {
   "name": "@marica.io/ui",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "sideEffects": false,
   "license": "MIT",
   "files": [
@@ -17,7 +17,8 @@
     "./form": "./dist/form/index.js",
     "./input-text": "./dist/input-text/index.js",
     "./select": "./dist/select/index.js",
-    "./toast": "./dist/toast/index.js"
+    "./toast": "./dist/toast/index.js",
+    "./utils": "./dist/lib/utils.js"
   },
   "scripts": {
     "build": "tsup",

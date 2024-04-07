@@ -12,3 +12,4 @@ export * from "./switch";
 export * from "./dnd";
 export * from "./toast";
 export * from "./rich-text";
+export * from "./lib/utils";

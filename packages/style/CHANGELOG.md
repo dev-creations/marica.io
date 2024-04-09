@@ -1,5 +1,11 @@
 # @marica.io/style
 
+## 0.1.6
+
+### Patch Changes
+
+- add - initial pagination component
+
 ## 0.1.5
 
 ### Patch Changes

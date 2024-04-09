@@ -18,6 +18,7 @@
     "./input-text": "./dist/input-text/index.js",
     "./select": "./dist/select/index.js",
     "./toast": "./dist/toast/index.js",
+    "./pagination": "./dist/pagination/index.js",
     "./utils": "./dist/lib/utils.js"
   },
   "scripts": {

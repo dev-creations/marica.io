@@ -1,5 +1,11 @@
 # @marica.io/style
 
+## 0.1.7
+
+### Patch Changes
+
+- add simple combobox
+
 ## 0.1.6
 
 ### Patch Changes

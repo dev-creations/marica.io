@@ -1,6 +1,6 @@
 {
   "name": "@marica.io/ui",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "sideEffects": false,
   "license": "MIT",
   "files": [
@@ -8,18 +8,27 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./layouts": "./dist/layouts/index.js",
     "./button": "./dist/button/index.js",
+    "./calendar": "./dist/calendar/index.js",
     "./checkbox": "./dist/checkbox/index.js",
     "./chip": "./dist/chip/index.js",
+    "./command": "./dist/command/index.js",
     "./date-picker": "./dist/date-picker/index.js",
     "./date-range-picker": "./dist/date-range-picker/index.js",
+    "./dialog": "./dist/dialog/index.js",
+    "./dnd": "./dist/dnd/index.js",
     "./form": "./dist/form/index.js",
     "./input-text": "./dist/input-text/index.js",
-    "./select": "./dist/select/index.js",
-    "./toast": "./dist/toast/index.js",
+    "./interactive": "./dist/interactive/index.js",
+    "./label": "./dist/label/index.js",
+    "./layouts": "./dist/layouts/index.js",
+    "./utils": "./dist/lib/utils.js",
     "./pagination": "./dist/pagination/index.js",
-    "./utils": "./dist/lib/utils.js"
+    "./popover": "./dist/popover/index.js",
+    "./rich-text": "./dist/rich-text/index.js",
+    "./select": "./dist/select/index.js",
+    "./switch": "./dist/switch/index.js",
+    "./toast": "./dist/toast/index.js"
   },
   "scripts": {
     "build": "tsup",
@@ -49,7 +58,7 @@
     "date-fns": "^3.6.0",
     "lucide-react": "^0.359.0",
     "react-day-picker": "^8.10.0",
-    "react-hook-form": "^7.51.1",
+    "react-hook-form": "^7.51.3",
     "tailwind-merge": "^2.2.2",
     "vaul": "^0.9.0",
     "zod": "^3.22.4"

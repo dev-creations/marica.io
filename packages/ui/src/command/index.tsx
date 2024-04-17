@@ -19,7 +19,7 @@ const Command = forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "mio-bg-popover mio-text-popover-foreground mio-flex mio-h-full mio-w-full mio-flex-col mio-overflow-hidden mio-rounded-md",
+      "mio-flex mio-h-full mio-w-full mio-flex-col mio-overflow-hidden mio-rounded-md mio-bg-white mio-text-slate-950",
       className
     )}
     {...props}
@@ -32,8 +32,8 @@ type CommandDialogProps = DialogProps;
 function CommandDialog({ children, ...props }: CommandDialogProps) {
   return (
     <Dialog {...props}>
-      <DialogContent className="mio-overflow-hidden mio-p-0 mio-hadow-lg">
-        <Command className="[&_[cmdk-group-heading]]:mio-text-muted-foreground [&_[cmdk-group-heading]]:mio-px-2 [&_[cmdk-group-heading]]:mio-font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:mio-pt-0 [&_[cmdk-group]]:mio-px-2 [&_[cmdk-input-wrapper]_svg]:mio-h-5 [&_[cmdk-input-wrapper]_svg]:mio-w-5 [&_[cmdk-input]]:mio-h-12 [&_[cmdk-item]]:mio-px-2 [&_[cmdk-item]]:mio-py-3 [&_[cmdk-item]_svg]:mio-h-5 [&_[cmdk-item]_svg]:mio-w-5">
+      <DialogContent className="mio-overflow-hidden mio-p-0 mio-shadow-lg">
+        <Command className="[&_[cmdk-group-heading]]:mio-px-2 [&_[cmdk-group-heading]]:mio-font-medium [&_[cmdk-group-heading]]:mio-text-slate-500 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:mio-pt-0 [&_[cmdk-group]]:mio-px-2 [&_[cmdk-input-wrapper]_svg]:mio-h-5 [&_[cmdk-input-wrapper]_svg]:mio-w-5 [&_[cmdk-input]]:mio-h-12 [&_[cmdk-item]]:mio-px-2 [&_[cmdk-item]]:mio-py-3 [&_[cmdk-item]_svg]:mio-h-5 [&_[cmdk-item]_svg]:mio-w-5">
           {children}
         </Command>
       </DialogContent>
@@ -53,7 +53,7 @@ const CommandInput = forwardRef<
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "placeholder:mio-text-muted-foreground mio-flex mio-h-11 mio-w-full mio-rounded-md mio-bg-transparent mio-py-3 mio-text-sm mio-outline-none disabled:mio-cursor-not-allowed disabled:mio-opacity-50",
+        "mio-flex mio-h-11 mio-w-full mio-rounded-md mio-bg-transparent mio-py-3 mio-text-sm mio-outline-none placeholder:mio-text-slate-500 disabled:mio-cursor-not-allowed disabled:mio-opacity-50",
         className
       )}
       {...props}
@@ -99,7 +99,7 @@ const CommandGroup = forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      "mio-text-foreground [&_[cmdk-group-heading]]:mio-text-muted-foreground mio-overflow-hidden mio-p-1 [&_[cmdk-group-heading]]:mio-px-2 [&_[cmdk-group-heading]]:mio-py-1.5 [&_[cmdk-group-heading]]:mio-text-xs [&_[cmdk-group-heading]]:mio-font-medium",
+      "mio-overflow-hidden mio-p-1 mio-text-slate-950 [&_[cmdk-group-heading]]:mio-px-2 [&_[cmdk-group-heading]]:mio-py-1.5 [&_[cmdk-group-heading]]:mio-text-xs [&_[cmdk-group-heading]]:mio-font-medium [&_[cmdk-group-heading]]:mio-text-slate-500",
       className
     )}
     {...props}
@@ -114,7 +114,7 @@ const CommandSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn("mio-bg-border mio--mx-1 mio-h-px", className)}
+    className={cn("mio--mx-1 mio-h-px mio-bg-slate-200", className)}
     {...props}
   />
 ));
@@ -127,7 +127,7 @@ const CommandItem = forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "aria-selected:mio-bg-accent aria-selected:mio-text-accent-foreground mio-relative mio-flex mio-cursor-default mio-select-none mio-items-center mio-rounded-sm mio-px-2 mio-py-1.5 mio-text-sm mio-outline-none data-[disabled]:mio-pointer-events-none data-[disabled]:mio-opacity-50",
+      "mio-relative mio-flex mio-cursor-default mio-select-none mio-items-center mio-rounded-sm mio-px-2 mio-py-1.5 mio-text-sm mio-outline-none aria-selected:mio-bg-slate-100 aria-selected:mio-text-slate-900 data-[disabled=true]:mio-pointer-events-none data-[disabled]:mio-opacity-50",
       className
     )}
     {...props}
@@ -143,7 +143,7 @@ function CommandShortcut({
   return (
     <span
       className={cn(
-        "mio-text-muted-foreground mio-ml-auto mio-text-xs mio-tracking-widest",
+        "mio-ml-auto mio-text-xs mio-tracking-widest mio-text-slate-500",
         className
       )}
       {...props}

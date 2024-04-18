@@ -1,8 +1,7 @@
 "use client";
 
 import { ChevronsUpDown } from "lucide-react";
-import { type ElementRef, forwardRef } from "react";
-import { type Command as CommandPrimitive } from "cmdk";
+import { forwardRef, type ForwardedRef } from "react";
 import { cn } from "../lib/utils";
 import { Button } from "../button";
 import {
@@ -15,15 +14,26 @@ import {
 import { FormControl } from "../form";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 
-const Combobox = forwardRef<
-  ElementRef<typeof CommandPrimitive>,
-  {
-    items: { key: string; label: string }[];
-    onChange: (...event: any[]) => void;
-    value: string;
+interface ComboboxProps<T extends { key: string; label: string }> {
+  items: T[];
+  multiselect?: boolean;
+  onChange?: (...event: any[]) => void;
+  value?: T[];
+}
+
+function InnerCombobox<T extends { key: string; label: string }>(
+  { items, onChange, value, multiselect }: ComboboxProps<T>,
+  ref: ForwardedRef<HTMLDivElement>
+) {
+  const selectedItems = items.filter((i) =>
+    value?.find((e) => e.key === i.key)
+  );
+
+  if (!multiselect && selectedItems.length > 1) {
+    throw new Error(
+      "Combobox: Only one item is allowed as value when mulitselect is false"
+    );
   }
->(({ items, onChange, value }, ref) => {
-  const selectedItem = items.find((i) => i.key === value);
 
   return (
     <Popover>
@@ -34,10 +44,12 @@ const Combobox = forwardRef<
             role="combobox"
             className={cn(
               "mio-w-[200px] mio-justify-between",
-              !selectedItem && "mio-text-slate-400"
+              selectedItems.length === 0 && "mio-text-slate-400"
             )}
           >
-            {selectedItem ? selectedItem.label : "Select item"}
+            {selectedItems.length > 0
+              ? selectedItems.map((i) => i.label).join(", ")
+              : "Select item"}
             <ChevronsUpDown className="mio-ml-2 mio-h-4 mio-w-4 mio-shrink-0 mio-opacity-50" />
           </Button>
         </FormControl>
@@ -48,7 +60,23 @@ const Combobox = forwardRef<
           <CommandEmpty>No item found.</CommandEmpty>
           <CommandList>
             {items.map((c) => (
-              <CommandItem key={c.key} value={c.key} onSelect={onChange}>
+              <CommandItem
+                key={c.key}
+                value={c.key}
+                onSelect={(e) => {
+                  if (selectedItems.find((i) => i.key === e)) {
+                    onChange?.(selectedItems.filter((i) => i.key !== e));
+                    return;
+                  }
+
+                  const values = [items.find((i) => i.key === e)];
+                  if (multiselect) {
+                    values.push(...selectedItems);
+                  }
+
+                  onChange?.(values);
+                }}
+              >
                 {c.label}
               </CommandItem>
             ))}
@@ -57,8 +85,13 @@ const Combobox = forwardRef<
       </PopoverContent>
     </Popover>
   );
-});
+}
 
-Combobox.displayName = "Combobox";
+const Combobox = forwardRef(InnerCombobox) as <
+  T extends { key: string; label: string },
+>(
+  props: ComboboxProps<T>,
+  ref: ForwardedRef<HTMLDivElement>
+) => ReturnType<typeof InnerCombobox>;
 
-export { Combobox };
+export { Combobox, type ComboboxProps };

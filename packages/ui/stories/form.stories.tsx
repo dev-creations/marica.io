@@ -9,7 +9,15 @@ import {
   FormLabel,
   FormMessage,
 } from "../src/form";
-import { Button, InputText } from "../src";
+import {
+  Button,
+  InputText,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../src";
 import { Combobox } from "../src/combobox";
 import { getDefaultsFromZodSchema } from "../src/lib/utils";
 
@@ -36,12 +44,18 @@ const kitchensinkFormSchema = z.object({
     .string({
       required_error: "Please choose a name.",
     })
+    .min(3)
     .default(""),
   item: z
-    .string({
-      required_error: "Please choose an item.",
+    .object({
+      key: z.string(),
+      label: z.string(),
     })
-    .optional(),
+    .array()
+    .default([
+      { key: "foo", label: "Foo" },
+      { key: "bar", label: "Bar" },
+    ]),
 });
 
 export const SimpleForm: Story = {
@@ -114,6 +128,7 @@ export const KitchenSinkForm: Story = {
                 <FormControl>
                   <Combobox
                     {...field}
+                    multiselect
                     items={[
                       { key: "foo", label: "Foo" },
                       { key: "bar", label: "Bar" },
@@ -126,7 +141,10 @@ export const KitchenSinkForm: Story = {
             )}
           />
 
-          <Button type="submit" disabled={!form.formState.isValid}>
+          <Button
+            type="submit"
+            disabled={!(form.formState.isValid && form.formState.isDirty)}
+          >
             Sub
           </Button>
         </>

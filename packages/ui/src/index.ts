@@ -7,6 +7,7 @@ export * from "./date-picker";
 export * from "./date-range-picker";
 export * from "./dialog";
 export * from "./dnd";
+export * from "./dropdown-menu";
 export * from "./form";
 export * from "./input-text";
 export * from "./interactive";

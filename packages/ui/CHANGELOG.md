@@ -1,5 +1,13 @@
 # @marica.io/ui
 
+## 0.1.8
+
+### Patch Changes
+
+- add - dropdown-menu
+- Updated dependencies
+  - @marica.io/style@0.1.8
+
 ## 0.1.7
 
 ### Patch Changes

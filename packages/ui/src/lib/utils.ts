@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { z } from "zod";
+import { type z } from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -17,8 +17,10 @@ export function getDefaultsFromZodSchema<Schema extends z.AnyZodObject>(
 ) {
   const defaults = Object.fromEntries(
     Object.entries(schema.shape as object).map(([key, value]) => {
-      if (value instanceof z.ZodDefault)
+      if (value._def.typeName === "ZodDefault") {
         return [key, value._def.defaultValue()];
+      }
+
       return [key, undefined];
     })
   );

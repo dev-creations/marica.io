@@ -1,5 +1,13 @@
 # @marica.io/ui
 
+## 0.1.9
+
+### Patch Changes
+
+- add - breadcrumb
+- Updated dependencies
+  - @marica.io/style@0.1.9
+
 ## 0.1.8
 
 ### Patch Changes

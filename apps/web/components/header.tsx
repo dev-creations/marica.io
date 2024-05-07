@@ -6,6 +6,9 @@ export default function Header() {
     <header className="p-3">
       <EvenFlow className="items-center">
         <Link href="/">marica.io</Link>
+        <nav className="text-center">
+          <Link href="/">Storybook</Link>
+        </nav>
         <nav className="text-right">
           <Link href="/">Storybook</Link>
         </nav>

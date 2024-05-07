@@ -16,7 +16,8 @@ const config = {
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-docs"),
-    "@storybook/addon-styling-webpack",
+    getAbsolutePath("@storybook/addon-styling-webpack"),
+    "@chromatic-com/storybook"
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite") as "@storybook/react-vite",

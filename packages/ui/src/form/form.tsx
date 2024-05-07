@@ -12,7 +12,7 @@ import { FormInternal } from "./internal-form";
 interface FormProps<T extends z.ZodRawShape, K extends z.ZodObject<T>> {
   schema: K;
   defaultValues?: DefaultValues<z.TypeOf<K>>;
-  onSubmit: SubmitHandler<z.infer<any>>;
+  onSubmit: SubmitHandler<z.infer<K>>;
   onChange?: FormEventHandler<HTMLFormElement>;
   children?: (form: UseFormReturn<z.infer<K>>) => JSX.Element;
 }

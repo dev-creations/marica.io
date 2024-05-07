@@ -11,7 +11,7 @@ const buttonVariants = cva(
         default: "mio-bg-slate-900 mio-text-slate-50 hover:mio-bg-slate-900/90",
         destructive: "mio-bg-red-500 mio-text-slate-50 hover:mio-bg-red-500/90",
         outline:
-          "mio-border mio-border-slate-200 mio-bg-white hover:mio-bg-slate-100 hover:mio-text-slate-900",
+          "mio-border mio-border-slate-200 mio-bg-transparent hover:mio-bg-slate-100 hover:mio-text-slate-900",
         secondary:
           "mio-bg-slate-100 mio-text-slate-900 hover:mio-bg-slate-100/80",
         ghost: "hover:mio-bg-slate-100 hover:mio-text-slate-900",

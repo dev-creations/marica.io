@@ -14,6 +14,7 @@ import {
   EditorContent,
   type JSONContent,
   useEditor,
+  type Content,
 } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
@@ -86,14 +87,20 @@ function RichText({
   placeholder,
   value = "",
   onChange,
-  required,
+  ...props
 }: {
   placeholder?: string;
   value?: string;
   required?: boolean;
-  onChange?: (props: { target: { value: JSONContent } }) => void;
+  onChange?: (props: { target: { value: string } }) => void;
 }) {
-  const [currentValue, setCurrentValue] = useState("");
+  const [currentValue, setCurrentValue] = useState<Content | undefined>(() => {
+    try {
+      return JSON.parse(value) as Content;
+    } catch (e) {
+      return undefined;
+    }
+  });
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -103,12 +110,12 @@ function RichText({
         placeholder,
       }),
     ],
-    content: value,
+    content: currentValue,
     onUpdate: (p) => {
       setCurrentValue(p.editor.getText());
       onChange?.({
         target: {
-          value: p.editor.getJSON(),
+          value: JSON.stringify(p.editor.getJSON()),
         },
       });
     },
@@ -120,12 +127,7 @@ function RichText({
 
   return (
     <>
-      <input
-        value={currentValue}
-        className="mio-hidden"
-        required={required}
-        readOnly
-      />
+      <input {...props} className="mio-hidden" readOnly />
       <MenuBar editor={editor} />
       <EditorContent
         className="[&>*]:mio-shadow-md focus-within:[&>*]:mio-outline-gray-400 [&>*]:mio-max-h-[200px] [&>*]:mio-min-h-[100px] [&>*]:mio-w-full [&>*]:mio-min-w-[200px] [&>*]:mio-max-w-full [&>*]:mio-overflow-y-scroll [&>*]:mio-rounded-md [&>*]:mio-bg-white focus-within:[&>*]:mio-outline [&>div]:mio-p-4 [&_*]:mio-outline-none"

@@ -2,6 +2,8 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build-storybook": "cd apps/docs && npm run build-storybook",
+    "chromatic": "cd apps/docs && npm run chromatic",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",

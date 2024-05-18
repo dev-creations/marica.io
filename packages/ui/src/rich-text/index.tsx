@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import Placeholder from "@tiptap/extension-placeholder";
 import Underline from "@tiptap/extension-underline";
 import {
@@ -12,10 +12,17 @@ import {
 import {
   type Editor,
   EditorContent,
-  type JSONContent,
   useEditor,
+  type Content,
 } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+
+interface RichTextProps {
+  placeholder?: string;
+  value?: string;
+  required?: boolean;
+  onChange?: (props: { target: { value: string } }) => void;
+}
 
 function MenuBar({ editor }: { editor: Editor | null }) {
   if (!editor) {
@@ -82,59 +89,56 @@ function MenuBar({ editor }: { editor: Editor | null }) {
   );
 }
 
-function RichText({
-  placeholder,
-  value = "",
-  onChange,
-  required,
-}: {
-  placeholder?: string;
-  value?: string;
-  required?: boolean;
-  onChange?: (props: { target: { value: JSONContent } }) => void;
-}) {
-  const [currentValue, setCurrentValue] = useState("");
-  const editor = useEditor({
-    extensions: [
-      StarterKit,
-      Underline,
-      Placeholder.configure({
-        emptyEditorClass: "is-editor-empty",
-        placeholder,
-      }),
-    ],
-    content: value,
-    onUpdate: (p) => {
-      setCurrentValue(p.editor.getText());
-      onChange?.({
-        target: {
-          value: p.editor.getJSON(),
-        },
-      });
-    },
-  });
+const RichText = forwardRef<HTMLInputElement, RichTextProps>(
+  ({ placeholder, value = "", onChange, ...props }, ref) => {
+    const [currentValue, setCurrentValue] = useState<Content | undefined>(
+      () => {
+        try {
+          return JSON.parse(value) as Content;
+        } catch (e) {
+          return undefined;
+        }
+      }
+    );
+    const editor = useEditor({
+      extensions: [
+        StarterKit,
+        Underline,
+        Placeholder.configure({
+          emptyEditorClass: "is-editor-empty",
+          placeholder,
+        }),
+      ],
+      content: currentValue,
+      onUpdate: (p) => {
+        setCurrentValue(p.editor.getText());
+        onChange?.({
+          target: {
+            value: JSON.stringify(p.editor.getJSON()),
+          },
+        });
+      },
+    });
 
-  if (!editor) {
-    return null;
+    if (!editor) {
+      return null;
+    }
+
+    return (
+      <>
+        <input {...props} className="mio-hidden" readOnly ref={ref} />
+        <MenuBar editor={editor} />
+        <EditorContent
+          className="[&>*]:mio-shadow-md focus-within:[&>*]:mio-outline-gray-400 [&>*]:mio-max-h-[200px] [&>*]:mio-min-h-[100px] [&>*]:mio-w-full [&>*]:mio-min-w-[200px] [&>*]:mio-max-w-full [&>*]:mio-overflow-y-scroll [&>*]:mio-rounded-md [&>*]:mio-bg-white focus-within:[&>*]:mio-outline [&>div]:mio-p-4 [&_*]:mio-outline-none"
+          editor={editor}
+        />
+        {/* <FloatingMenu editor={editor}>This is the floating menu</FloatingMenu> */}
+        {/* <BubbleMenu editor={editor}>This is the bubble menu</BubbleMenu> */}
+      </>
+    );
   }
+);
 
-  return (
-    <>
-      <input
-        value={currentValue}
-        className="mio-hidden"
-        required={required}
-        readOnly
-      />
-      <MenuBar editor={editor} />
-      <EditorContent
-        className="[&>*]:mio-shadow-md focus-within:[&>*]:mio-outline-gray-400 [&>*]:mio-max-h-[200px] [&>*]:mio-min-h-[100px] [&>*]:mio-w-full [&>*]:mio-min-w-[200px] [&>*]:mio-max-w-full [&>*]:mio-overflow-y-scroll [&>*]:mio-rounded-md [&>*]:mio-bg-white focus-within:[&>*]:mio-outline [&>div]:mio-p-4 [&_*]:mio-outline-none"
-        editor={editor}
-      />
-      {/* <FloatingMenu editor={editor}>This is the floating menu</FloatingMenu> */}
-      {/* <BubbleMenu editor={editor}>This is the bubble menu</BubbleMenu> */}
-    </>
-  );
-}
+RichText.displayName = "RichText";
 
 export { RichText };

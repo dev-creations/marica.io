@@ -9,15 +9,7 @@ import {
   FormLabel,
   FormMessage,
 } from "../src/form";
-import {
-  Button,
-  InputText,
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../src";
+import { Button, InputText, RichText } from "../src";
 import { Combobox } from "../src/combobox";
 import { getDefaultsFromZodSchema } from "../src/lib/utils";
 
@@ -40,6 +32,7 @@ const simpleFormSchema = z.object({
 });
 
 const kitchensinkFormSchema = z.object({
+  text: z.string(),
   name: z
     .string({
       required_error: "Please choose a name.",
@@ -102,6 +95,21 @@ export const KitchenSinkForm: Story = {
     children: (form) => {
       return (
         <>
+          <FormField
+            control={form.control}
+            name="text"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Text</FormLabel>
+                <FormControl>
+                  <RichText placeholder="text" {...field} />
+                </FormControl>
+                <FormDescription>This is your text.</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <FormField
             control={form.control}
             name="name"

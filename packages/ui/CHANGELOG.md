@@ -1,5 +1,14 @@
 # @marica.io/ui
 
+## 0.1.10
+
+### Patch Changes
+
+- [#44](https://github.com/dev-creations/marica.io/pull/44) [`c3ad612`](https://github.com/dev-creations/marica.io/commit/c3ad612b5e55257ed2cc82ee6b4161aa6bdbca8b) Thanks [@evayde](https://github.com/evayde)! - fix - add forwardref to rich text editor
+
+- Updated dependencies [[`c3ad612`](https://github.com/dev-creations/marica.io/commit/c3ad612b5e55257ed2cc82ee6b4161aa6bdbca8b)]:
+  - @marica.io/style@0.1.10
+
 ## 0.1.9
 
 ### Patch Changes

@@ -19,10 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={robotoFlex.className}>
-        <Header />
-        {children}
-        <Footer />
+      <body
+        className={`flex flex-col bg-gray-100 dark:bg-slate-800 dark:text-gray-50 ${robotoFlex.className}`}
+      >
+        <div className="grid min-h-screen grid-rows-[auto_minmax(0,1fr)_auto]">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

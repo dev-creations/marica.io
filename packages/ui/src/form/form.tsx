@@ -27,6 +27,7 @@ export function Form<T extends z.ZodRawShape, K extends z.ZodObject<T>>({
   const form = useForm<z.infer<K>>({
     resolver: zodResolver(schema),
     defaultValues,
+    mode: "onChange",
   });
 
   return (

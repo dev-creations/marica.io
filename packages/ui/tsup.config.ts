@@ -6,7 +6,7 @@ export default defineConfig({
   external: ["react", "react-dom"],
   target: "es2020",
   dts: true,
-  clean: true,
+  clean: false,
   sourcemap: true,
   treeshake: true,
   shims: true,

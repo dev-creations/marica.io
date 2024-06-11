@@ -7,7 +7,7 @@ const laila = Laila({ weight: ["500", "600", "700"], subsets: ["latin"] });
 
 export default function Header() {
   return (
-    <header className="p-3">
+    <header className="p-6">
       <EvenFlow className="items-center">
         <Link href="/" className="flex items-center gap-2 text-2xl">
           <Logo width={32} className="text-purple-600 drop-shadow-md" />

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or meta.title }}</title>
+  <meta name="description" content="{{ description or meta.description }}">
+
+  <style>
+    {% set css %}
+    {% include "styles/tailwind.css" %}
+    {% include "styles/global.css" %}
+    {% include "styles/prisma-okaidia.css" %}
+    {% endset %}
+    {{css | postcss | safe}}
+  </style>
+
+  <script src="{{ assetUrl('scripts/lunr.js') }}" defer></script>
+  <script src="{{ assetUrl('scripts/search.js') }}" defer></script>
+</head>
+<body class="mio-bg-grey-8 mio-grid mio-grid-cols-[auto_1fr]">
+  <header class="mio-flex mio-flex-col mio-p-4 mio-gap-8">
+    <a href="/">
+      <img src="{{ assetUrl('img/logo-text.svg') }}" alt="" width="150" height="40.73" />
+    </a>
+
+    <div class="mio-flex mio-flex-col mio-gap-2">
+      <button class="search-box mio-text-left" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
+        <span>Suche </span>
+      </button>
+      <nav class="mio-flex mio-flex-col mio-gap-2">
+        {%- for entry in collections.all | eleventyNavigation %}
+          <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+
+          {%- if entry.children.length -%}
+              {%- for child in entry.children %}
+                <a href="{{ child.url }}"{% if child.url == page.url %} aria-current="page"{% endif %} class="mio-pl-4">{{ child.title }}</a>
+              {% endfor -%}
+          {%- endif -%}
+        {%- endfor %}
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mio-font-bold;
+}
+
+h1 {
+  @apply mio-text-3xl;
+}
+
+h2 {
+  @apply mio-text-2xl;
+}
+
+h3 {
+  @apply mio-text-xl;
+}
+
+a {
+  @apply mio-underline mio-underline-offset-2 mio-decoration-dashed;
+}
+
+a:hover,
+a[aria-current],
+button:hover {
+  @apply mio-text-blue-500;
+}
+
+p {
+  @apply mio-my-4;
+}
+
+[data-level="3"] {
+  @apply mio-pl-4;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+p > code {
+  @apply mio-bg-slate-100;
+}

@@ -1,7 +1,13 @@
+const tailwindConfig = require("@marica.io/style/tailwind.config.js");
+
+const config = { ...tailwindConfig };
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["../../packages/ui/stories/**/*.{ts,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+  ...config,
+  content: [
+    "./src/**/*.{njk,md,css}",
+    "./eleventy.config.js",
+    "./src/**/*.svg",
+  ],
 };

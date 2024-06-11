@@ -1,0 +1,8 @@
+{% extends "layouts/root.njk" %}
+
+{% block content %}
+  <main id="content" class="mio-p-4">
+    <h1>{{meta.title}}</h1>
+    {{ content | safe }}
+  </main>
+{% endblock %}

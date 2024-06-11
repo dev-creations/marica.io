@@ -1,0 +1,19 @@
+{% extends "layouts/root.njk" %}
+
+{% block content %}
+  <div class="mio-grid mio-grid-cols-[minmax(0,3fr)_1fr] mio-max-w-[1200px] mio-mx-auto mio-p-4 mio-gap-4">
+    <main id="content">
+    <h1>{{meta.title}}</h1>
+    {{ content | safe }}
+    </main>
+    <aside class="content{% if toc %} content--with-toc{% endif %} mio-border-l mio-pl-4">
+      {% if toc %}
+        <div class="content__toc mio-sticky mio-top-0">
+          <ul>
+            <li class="mio-top"><a href="#" class="mio-no-underline mio-font-bold">{{ meta.title }}</a></li>
+          </ul>
+        </div>
+      {% endif %}
+    </aside>
+  </div>
+{% endblock %}

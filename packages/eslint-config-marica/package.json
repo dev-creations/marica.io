@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "private": true,
   "dependencies": {
-    "@marica.io/style": "*"
+    "@marica.io/style": "workspace:*"
   },
   "devDependencies": {
     "@vercel/style-guide": "^6.0.0",

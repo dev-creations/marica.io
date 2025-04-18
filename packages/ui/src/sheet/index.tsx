@@ -23,37 +23,51 @@ const SheetPortal = DrawerPrimitive.Portal;
 
 const SheetClose = DrawerPrimitive.Close;
 
-const SheetOverlay = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Overlay
-    ref={ref}
-    className={cn("mio-fixed mio-inset-0 mio-z-50 mio-bg-black/80", className)}
-    {...props}
-  />
-));
-SheetOverlay.displayName = DrawerPrimitive.Overlay.displayName;
-
-const SheetContent = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <SheetPortal>
-    <SheetOverlay />
-    <DrawerPrimitive.Content
+function SheetOverlay({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay> & {
+  ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Overlay>>;
+}) {
+  return (
+    <DrawerPrimitive.Overlay
       ref={ref}
       className={cn(
-        "mio-fixed mio-inset-x-0 mio-bottom-0 mio-z-50 mio-mt-24 mio-flex mio-h-auto mio-flex-col mio-rounded-t-[10px] mio-border mio-border-slate-200 mio-bg-white",
+        "mio:fixed mio:inset-0 mio:z-50 mio:bg-black/80",
         className
       )}
       {...props}
-    >
-      <div className="mio-mx-auto mio-mt-4 mio-h-2 mio-w-[100px] mio-rounded-full mio-bg-slate-100" />
-      {children}
-    </DrawerPrimitive.Content>
-  </SheetPortal>
-));
+    />
+  );
+}
+SheetOverlay.displayName = DrawerPrimitive.Overlay.displayName;
+
+function SheetContent({
+  ref,
+  className,
+  children,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & {
+  ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Content>>;
+}) {
+  return (
+    <SheetPortal>
+      <SheetOverlay />
+      <DrawerPrimitive.Content
+        ref={ref}
+        className={cn(
+          "mio:fixed mio:inset-x-0 mio:bottom-0 mio:z-50 mio:mt-24 mio:flex mio:h-auto mio:flex-col mio:rounded-t-[10px] mio:border mio:border-slate-200 mio:bg-white",
+          className
+        )}
+        {...props}
+      >
+        <div className="mio:mx-auto mio:mt-4 mio:h-2 mio:w-[100px] mio:rounded-full mio:bg-slate-100" />
+        {children}
+      </DrawerPrimitive.Content>
+    </SheetPortal>
+  );
+}
 SheetContent.displayName = "SheetContent";
 
 function SheetHeader({
@@ -63,7 +77,7 @@ function SheetHeader({
   return (
     <div
       className={cn(
-        "mio-grid mio-gap-1.5 mio-p-4 mio-text-center sm:mio-text-left",
+        "mio:grid mio:gap-1.5 mio:p-4 mio:text-center mio:sm:text-left",
         className
       )}
       {...props}
@@ -79,7 +93,7 @@ function SheetFooter({
   return (
     <div
       className={cn(
-        "mio-mt-auto mio-flex mio-flex-col mio-gap-2 mio-p-4",
+        "mio:mt-auto mio:flex mio:flex-col mio:gap-2 mio:p-4",
         className
       )}
       {...props}
@@ -88,31 +102,41 @@ function SheetFooter({
 }
 SheetFooter.displayName = "SheetFooter";
 
-const SheetTitle = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Title
-    ref={ref}
-    className={cn(
-      "mio-text-lg mio-font-semibold mio-leading-none mio-tracking-tight",
-      className
-    )}
-    {...props}
-  />
-));
+function SheetTitle({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title> & {
+  ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Title>>;
+}) {
+  return (
+    <DrawerPrimitive.Title
+      ref={ref}
+      className={cn(
+        "mio:text-lg mio:font-semibold mio:leading-none mio:tracking-tight",
+        className
+      )}
+      {...props}
+    />
+  );
+}
 SheetTitle.displayName = DrawerPrimitive.Title.displayName;
 
-const SheetDescription = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Description
-    ref={ref}
-    className={cn("mio-text-sm mio-text-slate-500", className)}
-    {...props}
-  />
-));
+function SheetDescription({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description> & {
+  ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Description>>;
+}) {
+  return (
+    <DrawerPrimitive.Description
+      ref={ref}
+      className={cn("mio:text-sm mio:text-slate-500", className)}
+      {...props}
+    />
+  );
+}
 SheetDescription.displayName = DrawerPrimitive.Description.displayName;
 
 export {

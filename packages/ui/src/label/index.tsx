@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/utils";
 
 const labelVariants = cva(
-  "mio-text-sm mio-font-medium mio-leading-none peer-disabled:mio-cursor-not-allowed peer-disabled:mio-opacity-70"
+  "mio:text-sm mio:font-medium mio:leading-none mio:peer-disabled:cursor-not-allowed mio:peer-disabled:opacity-70"
 );
 
 const Label = forwardRef<

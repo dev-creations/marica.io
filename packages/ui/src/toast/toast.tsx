@@ -8,29 +8,34 @@ import { cn } from "../lib/utils";
 
 const ToastProvider = ToastPrimitives.Provider;
 
-const ToastViewport = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Viewport>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Viewport
-    ref={ref}
-    className={cn(
-      "mio-fixed mio-top-0 mio-z-[100] mio-flex mio-max-h-screen mio-w-full mio-flex-col-reverse mio-p-4 sm:mio-bottom-0 sm:mio-right-0 sm:mio-top-auto sm:mio-flex-col md:mio-max-w-[420px]",
-      className
-    )}
-    {...props}
-  />
-));
+function ToastViewport({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport> & {
+  ref?: React.RefObject<React.ElementRef<typeof ToastPrimitives.Viewport>>;
+}) {
+  return (
+    <ToastPrimitives.Viewport
+      ref={ref}
+      className={cn(
+        "mio:fixed mio:top-0 mio:z-100 mio:flex mio:max-h-screen mio:w-full mio:flex-col-reverse mio:p-4 mio:sm:bottom-0 mio:sm:right-0 mio:sm:top-auto mio:sm:flex-col mio:md:max-w-[420px]",
+        className
+      )}
+      {...props}
+    />
+  );
+}
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName;
 
 const toastVariants = cva(
-  "mio-group mio-pointer-events-auto mio-relative mio-flex mio-w-full mio-items-center mio-justify-between mio-space-x-4 mio-overflow-hidden mio-rounded-md mio-border mio-p-6 mio-pr-8 mio-shadow-lg mio-transition-all data-[swipe=cancel]:mio-translate-x-0 data-[swipe=end]:mio-translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:mio-translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:mio-transition-none data-[state=open]:mio-animate-in data-[state=closed]:mio-animate-out data-[swipe=end]:mio-animate-out data-[state=closed]:mio-fade-out-80 data-[state=closed]:mio-slide-out-to-right-full data-[state=open]:mio-slide-in-from-top-full data-[state=open]:sm:mio-slide-in-from-bottom-full",
+  "mio:group mio:pointer-events-auto mio:relative mio:flex mio:w-full mio:items-center mio:justify-between mio:space-x-4 mio:overflow-hidden mio:rounded-md mio:border mio:p-6 mio:pr-8 mio:shadow-lg mio:transition-all mio:data-[swipe=cancel]:translate-x-0 mio:data-[swipe=end]:translate-x-(--radix-toast-swipe-end-x) mio:data-[swipe=move]:translate-x-(--radix-toast-swipe-move-x) mio:data-[swipe=move]:transition-none mio:data-[state=open]:animate-in mio:data-[state=closed]:animate-out mio:data-[swipe=end]:animate-out mio:data-[state=closed]:fade-out-80 mio:data-[state=closed]:slide-out-to-right-full mio:data-[state=open]:slide-in-from-top-full mio:sm:data-[state=open]:slide-in-from-bottom-full",
   {
     variants: {
       variant: {
-        default: "mio-border mio-bg-background mio-text-foreground",
+        default: "mio:border mio:bg-background mio:text-foreground",
         destructive:
-          "mio-destructive mio-group mio-border-destructive mio-bg-destructive mio-text-destructive-foreground",
+          "mio-destructive mio:group mio:border-destructive mio:bg-destructive mio:text-destructive-foreground",
       },
     },
     defaultVariants: {
@@ -39,11 +44,15 @@ const toastVariants = cva(
   }
 );
 
-const Toast = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
-    VariantProps<typeof toastVariants>
->(({ className, variant, ...props }, ref) => {
+function Toast({
+  ref,
+  className,
+  variant,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
+  VariantProps<typeof toastVariants> & {
+    ref?: React.Ref<React.ComponentRef<typeof ToastPrimitives.Root>>;
+  }) {
   return (
     <ToastPrimitives.Root
       ref={ref}
@@ -51,64 +60,84 @@ const Toast = React.forwardRef<
       {...props}
     />
   );
-});
+}
 Toast.displayName = ToastPrimitives.Root.displayName;
 
-const ToastAction = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Action>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Action
-    ref={ref}
-    className={cn(
-      "mio-ring-offset-background hover:mio-bg-secondary focus:mio-ring-ring group-[.destructive]:mio-border-muted/40 group-[.destructive]:hover:mio-border-destructive/30 group-[.destructive]:hover:mio-bg-destructive group-[.destructive]:hover:mio-text-destructive-foreground group-[.destructive]:focus:mio-ring-destructive mio-inline-flex mio-h-8 mio-shrink-0 mio-items-center mio-justify-center mio-rounded-md mio-border mio-bg-transparent mio-px-3 mio-text-sm mio-font-medium mio-transition-colors focus:mio-outline-none focus:mio-ring-2 focus:mio-ring-offset-2 disabled:mio-pointer-events-none disabled:mio-opacity-50",
-      className
-    )}
-    {...props}
-  />
-));
+function ToastAction({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action> & {
+  ref?: React.RefObject<React.ElementRef<typeof ToastPrimitives.Action>>;
+}) {
+  return (
+    <ToastPrimitives.Action
+      ref={ref}
+      className={cn(
+        "mio:ring-offset-background mio:hover:bg-secondary mio:focus:ring-ring mio:group-[.destructive]:border-muted/40 mio:hover:group-[.destructive]:border-destructive/30 mio:hover:group-[.destructive]:bg-destructive mio:hover:group-[.destructive]:text-destructive-foreground mio:focus:group-[.destructive]:ring-destructive mio:inline-flex mio:h-8 mio:shrink-0 mio:items-center mio:justify-center mio:rounded-md mio:border mio:bg-transparent mio:px-3 mio:text-sm mio:font-medium mio:transition-colors mio:focus:outline-hidden mio:focus:ring-2 mio:focus:ring-offset-2 mio:disabled:pointer-events-none mio:disabled:opacity-50",
+        className
+      )}
+      {...props}
+    />
+  );
+}
 ToastAction.displayName = ToastPrimitives.Action.displayName;
 
-const ToastClose = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Close>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Close>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Close
-    ref={ref}
-    className={cn(
-      "mio-text-foreground/50 hover:mio-text-foreground mio-absolute mio-right-2 mio-top-2 mio-rounded-md mio-p-1 mio-opacity-0 mio-transition-opacity focus:mio-opacity-100 focus:mio-outline-none focus:mio-ring-2 group-hover:mio-opacity-100 group-[.destructive]:mio-text-red-300 group-[.destructive]:hover:mio-text-red-50 group-[.destructive]:focus:mio-ring-red-400 group-[.destructive]:focus:mio-ring-offset-red-600",
-      className
-    )}
-    toast-close=""
-    {...props}
-  >
-    <X className="mio-h-4 mio-w-4" />
-  </ToastPrimitives.Close>
-));
+function ToastClose({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Close> & {
+  ref?: React.RefObject<React.ElementRef<typeof ToastPrimitives.Close>>;
+}) {
+  return (
+    <ToastPrimitives.Close
+      ref={ref}
+      className={cn(
+        "mio:text-foreground/50 mio:hover:text-foreground mio:absolute mio:right-2 mio:top-2 mio:rounded-md mio:p-1 mio:opacity-0 mio:transition-opacity mio:focus:opacity-100 mio:focus:outline-hidden mio:focus:ring-2 mio:group-hover:opacity-100 mio:group-[.destructive]:text-red-300 mio:hover:group-[.destructive]:text-red-50 mio:focus:group-[.destructive]:ring-red-400 mio:focus:group-[.destructive]:ring-offset-red-600",
+        className
+      )}
+      toast-close=""
+      {...props}
+    >
+      <X className="mio:h-4 mio:w-4" />
+    </ToastPrimitives.Close>
+  );
+}
 ToastClose.displayName = ToastPrimitives.Close.displayName;
 
-const ToastTitle = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Title>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Title
-    ref={ref}
-    className={cn("mio-text-sm mio-font-semibold", className)}
-    {...props}
-  />
-));
+function ToastTitle({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title> & {
+  ref?: React.RefObject<React.ElementRef<typeof ToastPrimitives.Title>>;
+}) {
+  return (
+    <ToastPrimitives.Title
+      ref={ref}
+      className={cn("mio:text-sm mio:font-semibold", className)}
+      {...props}
+    />
+  );
+}
 ToastTitle.displayName = ToastPrimitives.Title.displayName;
 
-const ToastDescription = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Description>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Description
-    ref={ref}
-    className={cn("mio-text-sm mio-opacity-90", className)}
-    {...props}
-  />
-));
+function ToastDescription({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description> & {
+  ref?: React.RefObject<React.ElementRef<typeof ToastPrimitives.Description>>;
+}) {
+  return (
+    <ToastPrimitives.Description
+      ref={ref}
+      className={cn("mio:text-sm mio:opacity-90", className)}
+      {...props}
+    />
+  );
+}
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
 type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>;

@@ -1,0 +1,7 @@
+@utility ram-* {
+  grid-template-columns: repeat(auto-fit, minmax(--value(--ram-size-*), 1fr));
+}
+
+@utility ram-fill-* {
+  grid-template-columns: repeat(auto-fill, minmax(--value(--ram-size-*), 1fr));
+}

@@ -13,7 +13,6 @@ export default function Header() {
           <Logo width={32} className="text-purple-600 drop-shadow-md" />
           <span className={laila.className}>marica.io</span>
         </Link>
-        <div>foo</div>
       </EvenFlow>
     </header>
   );

@@ -96,7 +96,7 @@ function RichText({
   onChange,
   ...props
 }: RichTextProps & {
-  ref?: React.RefObject<HTMLInputElement>;
+  ref?: React.Ref<HTMLInputElement>;
 }) {
   const [currentValue, setCurrentValue] = useState<Content | undefined>(() => {
     try {

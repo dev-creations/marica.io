@@ -7,7 +7,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../src/select";
+} from "../select";
 
 type Story = StoryObj<typeof Select>;
 

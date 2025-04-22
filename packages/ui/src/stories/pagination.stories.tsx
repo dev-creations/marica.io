@@ -7,7 +7,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "../src/pagination";
+} from "../pagination";
 
 type Story = StoryObj<typeof Pagination>;
 

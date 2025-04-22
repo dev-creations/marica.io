@@ -8,10 +8,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../src/form";
-import { Button, InputText, RichText } from "../src";
-import { Combobox } from "../src/combobox";
-import { getDefaultsFromZodSchema } from "../src/lib/utils";
+} from "../form";
+import { Button, InputText, RichText } from "..";
+import { Combobox } from "../combobox";
+import { getDefaultsFromZodSchema } from "../lib/utils";
 
 type Story = StoryObj<typeof Form>;
 

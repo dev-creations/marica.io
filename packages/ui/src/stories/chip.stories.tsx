@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Chip } from "../src/chip";
+import { Chip } from "../chip";
 
 type Story = StoryObj<typeof Chip>;
 

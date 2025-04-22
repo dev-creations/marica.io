@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { SearchIcon } from "lucide-react";
-import { InputText, type InputTextProps } from "../src/input-text";
+import { InputText, type InputTextProps } from "../input-text";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../src";
+} from "..";
 
 type Story = StoryObj<typeof InputText>;
 

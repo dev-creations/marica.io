@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DraggableItem, DropZone, useDnD, DnDProvider } from "../src/dnd";
+import { DraggableItem, DropZone, DnDProvider } from "../dnd";
 
 type Story = StoryObj<typeof DraggableItem>;
 

@@ -2,7 +2,7 @@ import {
   type PropsWithChildren,
   type InputHTMLAttributes,
   Children,
-  type ElementRef,
+  type ComponentRef,
 } from "react";
 import { cn } from "../lib/utils";
 
@@ -14,7 +14,7 @@ function InputText({
   children,
   ...props
 }: PropsWithChildren<InputTextProps> & {
-  ref?: React.RefObject<ElementRef<"input">>;
+  ref?: React.Ref<ComponentRef<"input">>;
 }) {
   const childArray = Children.toArray(children);
   return (

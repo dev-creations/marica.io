@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Minus, Plus, BarChart } from "lucide-react";
 import {
   Sheet,
   SheetClose,
@@ -9,8 +8,8 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../src/sheet";
-import { Button } from "../src/button";
+} from "../sheet";
+import { Button } from "../button";
 
 type Story = StoryObj<typeof Sheet>;
 

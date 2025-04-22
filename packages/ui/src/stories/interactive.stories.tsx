@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Interactive } from "../src/interactive";
+import { Interactive } from "../interactive";
 
 type Story = StoryObj<typeof Interactive>;
 

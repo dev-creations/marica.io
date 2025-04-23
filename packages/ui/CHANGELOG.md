@@ -4,6 +4,12 @@
 
 ### Minor Changes
 
+- [#60](https://github.com/dev-creations/marica.io/pull/60) [`da41c8e`](https://github.com/dev-creations/marica.io/commit/da41c8e8f14c619c23d87e7a369a70b5ac14e454) Thanks [@evayde](https://github.com/evayde)! - changed build to vite
+
+## 0.2.0
+
+### Minor Changes
+
 - Change to vite build
 
 ## 0.1.10

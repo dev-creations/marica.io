@@ -1,15 +1,24 @@
 {
   "name": "@marica.io/ui",
   "private": true,
-  "version": "0.1.10",
+  "version": "0.2.0",
   "type": "module",
   "files": [
     "dist/**"
   ],
   "exports": {
-    ".": { "import": "./dist/index.js", "types": "./dist/index.d.ts"},
-    "./layouts": {"import": "./dist/layouts/index.js", "types": "./dist/layouts/index.d.ts"},
-    "./layouts/*": {"import": "./dist/layouts/*.js", "types": "./dist/layouts/*.d.ts"},
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./layouts": {
+      "import": "./dist/layouts/index.js",
+      "types": "./dist/layouts/index.d.ts"
+    },
+    "./layouts/*": {
+      "import": "./dist/layouts/*.js",
+      "types": "./dist/layouts/*.d.ts"
+    },
     "./styles": "./dist/index.css"
   },
   "scripts": {

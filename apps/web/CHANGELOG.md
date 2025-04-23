@@ -1,5 +1,12 @@
 # @marica.io/web
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [[`da41c8e`](https://github.com/dev-creations/marica.io/commit/da41c8e8f14c619c23d87e7a369a70b5ac14e454)]:
+  - @marica.io/ui@0.2.0
+
 ## 0.0.4
 
 ### Patch Changes

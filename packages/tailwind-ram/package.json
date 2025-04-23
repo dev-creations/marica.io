@@ -1,7 +1,7 @@
 {
   "name": "@marica.io/tailwind-ram",
   "license": "MIT",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "sideEffects": false,
   "keywords": [
     "tailwind",
@@ -15,23 +15,19 @@
     "type": "git",
     "url": "git+https://github.com/dev-creations/marica.io.git"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup"
-  },
+  "main": "./index.css",
   "files": [
-    "dist"
+    "index.css"
   ],
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "tailwindcss": ">=3.2.0"
+    "tailwindcss": ">=4.1.0"
   },
   "devDependencies": {
+    "tsup": "^8.4.0",
     "postcss": "^8.4.36",
-    "typescript": "^5.4.2"
+    "typescript": "^5.8.3"
   }
 }

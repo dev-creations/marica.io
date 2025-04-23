@@ -11,7 +11,7 @@ export function Interactive({
   return (
     <button
       type="button"
-      className={cn("mio-cursor-pointer mio-bg-white mio-text-base", className)}
+      className={cn("mio:cursor-pointer mio:bg-white mio:text-base", className)}
       {...props}
     >
       {children}

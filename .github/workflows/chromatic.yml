@@ -11,11 +11,22 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
 
       - name: build
-        run: NODE_OPTIONS="--max_old_space_size=4096" npm run build
+        run: NODE_OPTIONS="--max_old_space_size=4096" pnpm run build
 
       - name: Run Chromatic
         uses: chromaui/action@latest

@@ -1,5 +1,11 @@
 # @marica.io/ui
 
+## 0.2.0
+
+### Minor Changes
+
+- Change to vite build
+
 ## 0.1.10
 
 ### Patch Changes

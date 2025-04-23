@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronsUpDown } from "lucide-react";
-import { forwardRef, type ForwardedRef } from "react";
+import { forwardRef, type Ref, type ForwardedRef } from "react";
 import { cn } from "../lib/utils";
 import { Button } from "../button";
 import {
@@ -23,7 +23,7 @@ interface ComboboxProps<T extends { key: string; label: string }> {
 
 function InnerCombobox<T extends { key: string; label: string }>(
   { items, onChange, value, multiselect }: ComboboxProps<T>,
-  ref: ForwardedRef<HTMLDivElement>
+  ref?: Ref<HTMLDivElement>
 ) {
   const selectedItems = items.filter((i) =>
     value?.find((e) => e.key === i.key)
@@ -43,18 +43,18 @@ function InnerCombobox<T extends { key: string; label: string }>(
             variant="outline"
             role="combobox"
             className={cn(
-              "mio-w-[200px] mio-justify-between",
-              selectedItems.length === 0 && "mio-text-slate-400"
+              "mio:w-[200px] mio:justify-between",
+              selectedItems.length === 0 && "mio:text-slate-400"
             )}
           >
             {selectedItems.length > 0
               ? selectedItems.map((i) => i.label).join(", ")
               : "Select item"}
-            <ChevronsUpDown className="mio-ml-2 mio-h-4 mio-w-4 mio-shrink-0 mio-opacity-50" />
+            <ChevronsUpDown className="mio:ml-2 mio:h-4 mio:w-4 mio:shrink-0 mio:opacity-50" />
           </Button>
         </FormControl>
       </PopoverTrigger>
-      <PopoverContent className="mio-w-[200px] mio-p-0 mio-bg-white">
+      <PopoverContent className="mio:w-[200px] mio:p-0 mio:bg-white">
         <Command ref={ref}>
           <CommandInput placeholder="Search items..." />
           <CommandEmpty>No item found.</CommandEmpty>
@@ -91,7 +91,7 @@ const Combobox = forwardRef(InnerCombobox) as <
   T extends { key: string; label: string },
 >(
   props: ComboboxProps<T>,
-  ref: ForwardedRef<HTMLDivElement>
+  ref?: ForwardedRef<HTMLDivElement>
 ) => ReturnType<typeof InnerCombobox>;
 
 export { Combobox, type ComboboxProps };

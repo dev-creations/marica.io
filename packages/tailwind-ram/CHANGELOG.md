@@ -1,5 +1,11 @@
 # @marica.io/tailwind-ram
 
+## 1.0.0
+
+### Major Changes
+
+- Upgrade to Tailwind4 @utility
+
 ## 0.3.1
 
 ### Patch Changes

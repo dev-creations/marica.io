@@ -6,7 +6,7 @@ import {
   useForm,
   type DefaultValues,
 } from "react-hook-form";
-import { type FormEventHandler } from "react";
+import { type JSX, type FormEventHandler } from "react";
 import { FormInternal } from "./internal-form";
 
 interface FormProps<T extends z.ZodRawShape, K extends z.ZodObject<T>> {

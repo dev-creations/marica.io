@@ -24,9 +24,10 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
+    "tsup": "^8.4.0",
+    "@types/jest": "^29.5.14",
     "postcss": "^8.4.36",
-    "ts-jest": "^29.1.2",
-    "typescript": "^5.4.2"
+    "ts-jest": "^29.3.2",
+    "typescript": "^5.8.3"
   }
 }

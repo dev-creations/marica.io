@@ -5,27 +5,32 @@ import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check } from "lucide-react";
 import { cn } from "../lib/utils";
 
-const Checkbox = React.forwardRef<
-  React.ElementRef<typeof CheckboxPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
->(({ className, ...props }, ref) => (
-  <CheckboxPrimitive.Root
-    className={cn(
-      "mio-peer mio-h-4 mio-w-4 mio-shrink-0 mio-rounded-sm mio-border mio-border-slate-900 mio-ring-offset-white hover:mio-border-slate-200 focus-visible:mio-outline-none focus-visible:mio-ring-2 focus-visible:mio-ring-slate-950 focus-visible:mio-ring-offset-2 disabled:mio-cursor-not-allowed disabled:mio-opacity-50 data-[state=checked]:mio-bg-slate-900 data-[state=checked]:mio-text-slate-50",
-      className
-    )}
-    ref={ref}
-    {...props}
-  >
-    <CheckboxPrimitive.Indicator
+function Checkbox({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {
+  ref?: React.RefObject<React.ElementRef<typeof CheckboxPrimitive.Root>>;
+}) {
+  return (
+    <CheckboxPrimitive.Root
       className={cn(
-        "mio-flex mio-items-center mio-justify-center mio-text-current"
+        "mio:peer mio:h-4 mio:w-4 mio:shrink-0 mio:rounded-sm mio:border mio:border-slate-900 mio:ring-offset-white mio:hover:border-slate-200 mio:focus-visible:outline-hidden mio:focus-visible:ring-2 mio:focus-visible:ring-slate-950 mio:focus-visible:ring-offset-2 mio:disabled:cursor-not-allowed mio:disabled:opacity-50 mio:data-[state=checked]:bg-slate-900 mio:data-[state=checked]:text-slate-50",
+        className
       )}
+      ref={ref}
+      {...props}
     >
-      <Check className="mio-size-4" />
-    </CheckboxPrimitive.Indicator>
-  </CheckboxPrimitive.Root>
-));
+      <CheckboxPrimitive.Indicator
+        className={cn(
+          "mio:flex mio:items-center mio:justify-center mio:text-current"
+        )}
+      >
+        <Check className="mio:size-4" />
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
+  );
+}
 Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
 export { Checkbox };

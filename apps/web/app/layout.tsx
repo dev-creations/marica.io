@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto_Flex } from "next/font/google";
-import "@marica.io/style";
+import "@marica.io/ui/styles";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
